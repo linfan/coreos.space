@@ -30,4 +30,7 @@ node_modules
 .idea
 
 # Generated file
-build
+dist
+
+# Reference file
+ref
