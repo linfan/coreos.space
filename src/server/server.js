@@ -1,19 +1,21 @@
 "use strict";
 
 // Dependencies
+require ("babel/polyfill");
 var React = require('react');
 var koa = require('koa');
+var co = require('co');
 var Router = require("react-router");
-var koa_static = require('koa-static');
+//import koa_static from 'koa-static';
 var views = require('co-views');
-require("babel/register");
+var Routes = require("../shared/routes");
 
 // Server
 const app = koa();
 
-app.use(koa_static(__dirname + '/public'));
+//app.use(koa_static(__dirname + '/public'));
 
-// Logging
+// Logging middleware
 app.use(function*(next) {
   try {
     yield next
@@ -37,10 +39,21 @@ app.use(function*(next) {
 });
 
 app.use(function*(next) {
-  let Login = require('../components/Login');
-  let content = React.renderToString(<Login />);
-  this.body = yield this.render('index', {content: content});
-  this.status = 200;
+  var that = this;
+
+  var renderPromise = new Promise((resolve, reject) => {
+
+    // Router
+    Router.run(Routes, co.wrap(function* (Handler) {
+        var content = React.renderToString(<Handler />);
+        that.body = yield that.render('index', {content: content});
+        that.status = 200;
+        resolve(that.body)
+    }));
+  });
+
+  return yield renderPromise
+
 });
 
 // Start app

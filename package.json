@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "clean": "rm -rf lib",
-    "start": "webpack-dev-server --hot --progress --colors --inline --port 8000",
+    "clean": "rm -rf dist",
+    "start": "webpack-dev-server --hot --progress --colors --inline --port 3000",
     "open": "open http://localhost:8000/webpack-dev-server/#/",
-    "build": "webpack --progress --colors",
-    "babel": "node_modules/.bin/babel src -d dist",
-    "server": "node dist/server/server.js"
+    "build-cl": "webpack --progress --colors",
+    "build-sr": "node_modules/.bin/babel src -d dist",
+    "build": "npm run clean && npm run build-cl && npm run build-sr",
+    "server": "node --debug dist/server/server.js"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,8 @@
     "webpack-dev-server": "^1.12.0"
   },
   "dependencies": {
+    "co": "^4.6.0",
+    "co-thunkify": "0.0.1",
     "co-views": "^2.1.0",
     "jade": "^1.11.0",
     "koa": "^1.1.0",
