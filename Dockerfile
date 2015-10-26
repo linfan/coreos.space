@@ -7,4 +7,4 @@ ADD . /usr/src/app
 RUN npm install
 RUN npm run build
 
-CMD npm run server
+ENTRYPOINT npm run server
