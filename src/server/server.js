@@ -8,10 +8,11 @@ import koa_static from 'koa-static';
 import views from 'co-views';
 import Routes from "../shared/routes";
 
-// Server
+// Server object
 const app = koa();
 
-app.use(koa_static(__dirname + '/dist'));
+// Serve static file
+app.use(koa_static('dist'));
 
 // Logging middleware
 app.use(function*(next) {
@@ -36,22 +37,23 @@ app.use(function*(next) {
   yield next;
 });
 
+// Serve html request
 app.use(function*(next) {
-  var that = this;
-
-  var renderPromise = new Promise((resolve, reject) => {
-
-    // Router
-    Router.run(Routes, co.wrap(function* (Handler) {
+  var requestPath = this.request.path;
+  if(!requestPath.includes('.js')) {
+    var that = this;
+    var renderPromise = new Promise((resolve, reject) => {
+      // React router
+      Router.run(Routes, co.wrap(function* (Handler) {
         var content = React.renderToString(<Handler />);
         that.body = yield that.render('index', {content: content});
         that.status = 200;
         resolve(that.body)
-    }));
-  });
+      }));
+    });
+  }
 
   return yield renderPromise
-
 });
 
 // Start app
