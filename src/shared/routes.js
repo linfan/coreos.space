@@ -1,8 +1,7 @@
 import React from 'react';
 import App from '../components/App';
 import LoginHandler from '../components/Login';
-var ReactRouter = require('react-router');
-var Route = ReactRouter.Route;
+import { Route } from 'react-router';
 
 var Routes = (
   <Route name="app" path="/" handler={App}>

@@ -1,19 +1,17 @@
-"use strict";
-
 // Dependencies
-require ("babel/polyfill");
-var React = require('react');
-var koa = require('koa');
-var co = require('co');
-var Router = require("react-router");
-//import koa_static from 'koa-static';
-var views = require('co-views');
-var Routes = require("../shared/routes");
+import "babel/polyfill";
+import React from 'react';
+import koa from 'koa';
+import co from 'co';
+import Router from "react-router";
+import koa_static from 'koa-static';
+import views from 'co-views';
+import Routes from "../shared/routes";
 
 // Server
 const app = koa();
 
-//app.use(koa_static(__dirname + '/public'));
+app.use(koa_static(__dirname + '/dist'));
 
 // Logging middleware
 app.use(function*(next) {

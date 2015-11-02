@@ -7,11 +7,11 @@
     "test": "mocha",
     "clean": "rm -rf dist",
     "start": "webpack-dev-server --hot --progress --colors --inline --port 3000",
-    "open": "open http://localhost:8000/webpack-dev-server/#/",
+    "open": "open http://localhost:3000/webpack-dev-server/#/",
     "build-cl": "webpack --progress --colors",
     "build-sr": "node_modules/.bin/babel src -d dist",
     "build": "npm run clean && npm run build-cl && npm run build-sr",
-    "server": "node --debug dist/server/server.js"
+    "server": "node dist/server/server.js"
   },
   "repository": {
     "type": "git",
