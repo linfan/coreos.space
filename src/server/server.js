@@ -1,12 +1,11 @@
 // Dependencies
-import 'babel-polyfill';
-import React from 'react';
-import koa from 'koa';
-import co from 'co';
-import Router from "react-router";
-import koa_static from 'koa-static';
-import views from 'co-views';
-import Routes from "../shared/routes";
+import 'babel-polyfill'
+import koa from 'koa'
+import co from 'co'
+import koa_static from 'koa-static'
+import views from 'co-views'
+import Routes from './srv-routes.js'
+import Util from './util.js'
 
 // Server object
 const app = koa();
@@ -37,23 +36,14 @@ app.use(function*(next) {
   yield next;
 });
 
-// Serve html request
-app.use(function*(next) {
-  var requestPath = this.request.path;
-  if(!requestPath.includes('.js')) {
-    var that = this;
-    var renderPromise = new Promise((resolve, reject) => {
-      // React router
-      Router.run(Routes, co.wrap(function* (Handler) {
-        var content = React.renderToString(<Handler />);
-        that.body = yield that.render('index', {content: content});
-        that.status = 200;
-        resolve(that.body)
-      }));
-    });
-  }
+// Register routes
+new Routes(app);
 
-  return yield renderPromise
+app.use(function*(next) {
+  if(!Util.isResourceFile(this.request.path)) {
+    this.body = yield this.render('404');
+    this.status = 404;
+  }
 });
 
 // Start app
