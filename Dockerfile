@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 EXPOSE 3000
 
 ADD . /usr/src/app
-RUN npm install --production
+RUN npm install
 RUN npm run build-sr
 
 ENTRYPOINT npm run server
