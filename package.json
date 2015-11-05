@@ -43,7 +43,8 @@
     "jade": "^1.11.0",
     "jade-loader": "^0.7.1",
     "koa": "^1.1.0",
-    "koa-static": "^1.5.1"
+    "koa-static": "^1.5.1",
+    "koa-route": "^2.4.2"
   },
   "babel": {
     "presets": [
