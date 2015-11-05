@@ -1,10 +1,10 @@
 FROM node:4.2.1
 
-WORKDIR /usr/src/app
-EXPOSE 3000
+ADD . /usr/app
 
-ADD . /usr/src/app
 RUN npm install
 RUN npm run build-sr
 
+WORKDIR /usr/app
+EXPOSE 3000
 ENTRYPOINT npm run server
