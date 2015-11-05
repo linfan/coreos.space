@@ -1,5 +1,5 @@
 // Dependencies
-import "babel/polyfill";
+import 'babel-polyfill';
 import React from 'react';
 import koa from 'koa';
 import co from 'co';
