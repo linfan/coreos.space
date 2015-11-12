@@ -11,10 +11,12 @@ import Util from './util.js'
 const app = koa();
 
 // Serve static file
-app.use(koa_static('dist'));
+app.use(koa_static('js/3rd'));
+app.use(koa_static('style/css'));
+app.use(koa_static('img'));
 
 // Logging middleware
-app.use(function*(next) {
+app.use(function *(next) {
   try {
     yield next
   } finally {
@@ -28,10 +30,10 @@ app.use(function*(next) {
 });
 
 // Jade middleware
-app.use(function*(next) {
+app.use(function *(next) {
   this.render = views('views', {
-    map: {jade: 'jade'},
-    default: 'jade'
+    map: { html: 'swig' },
+    default: 'html'
   });
   yield next;
 });
@@ -39,11 +41,11 @@ app.use(function*(next) {
 // Register routes
 new Routes(app);
 
-app.use(function*(next) {
-  if(!Util.isResourceFile(this.request.path)) {
-    this.body = yield this.render('404');
-    this.status = 404;
-  }
+app.use(function *(next) {
+  yield next;
+  if (this.body || !this.idempotent) return;
+  this.body = yield this.render('html/404');
+  this.status = 404;
 });
 
 // Start app
