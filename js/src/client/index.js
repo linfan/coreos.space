@@ -24,6 +24,18 @@ function fixBoxHeight() {
   }
 }
 
-$(document).ready(function () {
-  setTimeout(fixBoxHeight, 0);
+$(document).ready( () => {
+
+  $(window).on('load', () => {
+    fixBoxHeight();
+  });
+
+  $(window).on('resize', () => {
+    fixBoxHeight();
+  });
+
+  // script-for-menu
+  $("span.menu").on("click", function () {
+    $(".top-menu ul").slideToggle("slow", () => {});
+  });
 });
