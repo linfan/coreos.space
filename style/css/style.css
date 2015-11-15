@@ -363,7 +363,7 @@ a.hvr-shutter-out-horizontal:hover:before, a.hvr-shutter-out-horizontal:focus:be
     font-weight: 400;
     font-size: 1em;
     line-height: 1.8em;
-    padding: 2em 0 3em;
+    margin: 1.5em 0 2em;
     overflow: scroll;
 }
 
@@ -393,7 +393,6 @@ a.hvr-shutter-out-horizontal:hover:before, a.hvr-shutter-out-horizontal:focus:be
 }
 
 .about_right {
-    padding: 32px 46px 44px 25px;
     margin: 0;
     background: #709DCA;
 }
@@ -1580,7 +1579,11 @@ div#portfoliolist {
 }
 
 /*--/conatact--*/
-/*--responsive--*/
+
+/*---------------------------------------------------------*/
+/*-- responsive                                          --*/
+/*---------------------------------------------------------*/
+
 /*@media (max-width: 1366px) {*/
 @media (min-width: 1281px) {
     .banner-left h1 {
@@ -1609,6 +1612,10 @@ div#portfoliolist {
 
     .app-img {
         width: 80%;
+    }
+
+    .about_right {
+        padding: 30px 46px 40px 25px;
     }
 }
 
@@ -1659,6 +1666,10 @@ div#portfoliolist {
 
     .ava-icon {
         width: 70px;
+    }
+
+    .about_right {
+        padding: 20px 46px 30px 25px;
     }
 }
 
@@ -1774,7 +1785,7 @@ div#portfoliolist {
     }
 
     .about_right p {
-        padding: 1em 0 2em;
+        margin: 1em 0 2em;
         font-size: 0.875em;
     }
 
@@ -1904,7 +1915,7 @@ div#portfoliolist {
     }
 
     .about_right {
-        width: 50%;
+        width: 100%;
         float: left;
     }
 
@@ -1939,7 +1950,7 @@ div#portfoliolist {
         font-size: 0.875em;
         height: 124px;
         /*overflow: hidden;*/
-        margin-bottom: 1.7em;
+        /*margin-bottom: 1.7em;*/
     }
 
     .icon-text {
@@ -1954,7 +1965,7 @@ div#portfoliolist {
     }
 
     .about_left {
-        width: 50%;
+        width: 100%;
         float: left;
     }
 
@@ -2272,7 +2283,7 @@ div#portfoliolist {
         font-size: 0.875em;
         height: 95px;
         /*overflow: hidden;*/
-        margin-bottom: 1.6em;
+        /*margin-bottom: 1.6em;*/
     }
 
     .about_right a {

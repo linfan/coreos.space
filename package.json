@@ -5,11 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "clean": "rm -rf dist",
-    "start": "webpack-dev-server --hot --progress --colors --inline --port 3000 --config webpack.config.js",
-    "open": "open http://localhost:3000/webpack-dev-server/#/",
-    "gulp": "gulp",
-    "webpack": "webpack --progress --colors",
+    "clean": "rm -rf js/dist",
     "babel": "node_modules/.bin/babel js/src -d js/dist",
     "build": "npm run clean && npm run babel",
     "server": "node js/dist/server/server.js"

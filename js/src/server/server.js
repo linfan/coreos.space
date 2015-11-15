@@ -12,6 +12,8 @@ const app = koa();
 
 // Serve static file
 app.use(koa_static('js/3rd'));
+app.use(koa_static('js/dist/client'));
+app.use(koa_static('style/3rd'));
 app.use(koa_static('style/css'));
 app.use(koa_static('img'));
 

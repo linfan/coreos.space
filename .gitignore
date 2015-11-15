@@ -29,12 +29,15 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+js/3rd
+style/3rd
 
 # IDEA
 .idea
 
 # Generated file
-dist
+js/dist
+views/jade/*.html
 
 # Reference file
 ref
