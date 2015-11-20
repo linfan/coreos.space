@@ -441,7 +441,8 @@ a.hvr-shutter-out-horizontal:hover:before, a.hvr-shutter-out-horizontal:focus:be
 
 .features-gird h4 {
     padding-top: 18px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
+    margin-top: 0.5em;
     font-weight: 900;
     color: #D0D0D0;
     float: left;
@@ -453,7 +454,7 @@ a.hvr-shutter-out-horizontal:hover:before, a.hvr-shutter-out-horizontal:focus:be
 
 .features-gird h3 {
     float: left;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-weight: 600;
     margin-top: 4%;
     color: #616060;
@@ -1575,7 +1576,7 @@ div#portfoliolist {
 }
 
 .about-section {
-    padding-bottom: 2em;
+    padding: 2em 0 2em 0;
 }
 
 /*--/conatact--*/
@@ -1664,9 +1665,9 @@ div#portfoliolist {
         width: 80%;
     }
 
-    .ava-icon {
-        width: 70px;
-    }
+    /*.ava-icon {*/
+        /*width: 70px;*/
+    /*}*/
 
     .about_right {
         padding: 20px 46px 30px 25px;
@@ -1805,9 +1806,9 @@ div#portfoliolist {
         padding-bottom: 15px;
     }
 
-    .ava-icon {
-        width: 60px;
-    }
+    /*.ava-icon {*/
+        /*width: 60px;*/
+    /*}*/
 }
 
 /*@media (max-width: 768px) {*/
