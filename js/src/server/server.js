@@ -3,6 +3,8 @@ import 'babel-polyfill'
 import koa from 'koa'
 import co from 'co'
 import koa_static from 'koa-static'
+import etag from 'koa-etag';
+import conditional from 'koa-conditional-get';
 import views from 'co-views'
 import Routes from './srv-routes.js'
 import Util from './util.js'
@@ -35,9 +37,12 @@ app.use(function *(next) {
       this.request.ip,
       this.request.header['user-agent']
     );
-    console.log(JSON.stringify(this.request.header));
   }
 });
+
+// Etag and conditional-get return 304 when page is fresh
+app.use(conditional());
+app.use(etag());
 
 // Render middleware
 app.use(function *(next) {
