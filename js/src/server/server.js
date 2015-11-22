@@ -27,14 +27,15 @@ app.use(function *(next) {
   try {
     yield next
   } finally {
-    console.log('%s %s %s %s %s %s',
+    console.log('%s %s %s %s %s {%s}',
       new Date().toISOString(),
-      this.request.host,
-      this.request.ip,
       this.request.method,
       this.request.url,
-      this.response.status
-    )
+      this.response.status,
+      this.request.ip,
+      this.request.header['user-agent']
+    );
+    console.log(JSON.stringify(this.request.header));
   }
 });
 
