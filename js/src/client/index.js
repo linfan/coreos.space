@@ -34,9 +34,4 @@ $(document).ready( () => {
   $(window).on('resize', () => {
     fixBoxHeight();
   });
-
-  // script-for-menu
-  $("span.menu").on("click", function () {
-    $(".top-menu ul").slideToggle("slow", () => {});
-  });
 });

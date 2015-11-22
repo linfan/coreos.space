@@ -1,23 +1,6 @@
 .banner
     .container
-        .banner-top
-            .logo
-                a(href='/')
-                    img.img-responsive(src='coreos.png', alt='')
-            .top-menu
-                span.menu
-                ul
-                    li
-                        a.active.hvr-shutter-out-horizontal(href='/') 主页
-                    li
-                        a.hvr-shutter-out-horizontal(href='/content') 目录
-                    li
-                        a.hvr-shutter-out-horizontal(href='/download') 资源
-                    li
-                        a.hvr-shutter-out-horizontal(href='/corrigendum') 勘误
-                    li
-                        a.hvr-shutter-out-horizontal(href='/about') 关于作者
-            .clearfix
+        include ../inc/navigator
         .banner-bottom
             .col-md-6.banner-left
                 h1 CoreOS
