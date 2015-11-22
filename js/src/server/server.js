@@ -10,6 +10,11 @@ import Util from './util.js'
 // Server object
 const app = koa();
 
+// Render config
+const htmlMapper = (app.env === 'development')
+  ? { map: { jade: 'jade' }, default: 'jade' }
+  : { map: { html: 'swig' }, default: 'html' };
+
 // Serve static file
 app.use(koa_static('js/3rd'));
 app.use(koa_static('js/dist/client'));
@@ -22,8 +27,10 @@ app.use(function *(next) {
   try {
     yield next
   } finally {
-    console.log('%s %s %s %s',
+    console.log('%s %s %s %s %s %s',
       new Date().toISOString(),
+      this.request.host,
+      this.request.ip,
       this.request.method,
       this.request.url,
       this.response.status
@@ -31,24 +38,14 @@ app.use(function *(next) {
   }
 });
 
-// Jade middleware
+// Render middleware
 app.use(function *(next) {
-  this.render = views('views', {
-    map: { html: 'swig' },
-    default: 'html'
-  });
+  this.render = views('views', htmlMapper);
   yield next;
 });
 
 // Register routes
 new Routes(app);
-
-app.use(function *(next) {
-  yield next;
-  if (this.body || !this.idempotent) return;
-  this.body = yield this.render('html/404');
-  this.status = 404;
-});
 
 // Start app
 const PORT = 3000;
