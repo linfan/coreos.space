@@ -5,7 +5,8 @@ ENV NODE_ENV production
 
 WORKDIR /usr/app
 RUN npm install
-RUN npm run build
+RUN apt-get install -y make
+RUN make build-rel
 
 EXPOSE 3000
-ENTRYPOINT npm run server
+ENTRYPOINT make run
