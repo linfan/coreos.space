@@ -1,0 +1,22 @@
+{
+  "restartable": "rs",
+  "verbose": true,
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules",
+    "js/src/",
+    "js/dist/client/"
+  ],
+  "execMap": {
+    "js": "node"
+  },
+  "watch": [
+    "js/dist/server/"
+  ],
+  "events": {
+    "restart": "osascript -e 'display notification \"Coreos.space restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
+  },
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

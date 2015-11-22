@@ -40,12 +40,5 @@ unwatch:
 watch: unwatch babel-watch sass-watch jade-watch
 	scripts/nodemon.sh
 
-package:
-	zip -r -q pkg/itrip-automation-webapp.zip views img js style -x views/jade/* views/jade/*/* style/sass/* js/src/*/*
-
-release: build-rel package
-	send-file-to itrip3 pkg/itrip-automation-webapp.zip
-	ssh-to itrip3 "cd /home/aoliday/web && export NODE_ENV=production && ./update.sh 2>&1 >logs/release.log"
-
 run:
 	node js/dist/server/server.js
