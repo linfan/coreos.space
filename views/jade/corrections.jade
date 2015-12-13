@@ -7,13 +7,143 @@ html
         .banner-mini
             .container
                 include inc/navigator
-        .error-page
-            .container
-                .error-page.text-center
-                    h3
-                        | 建
-                        span 设
-                        | 中
-                    p 这个页面还在建设中,敬请期待
-                    a.button.curl-bottom-right.two(href='/') 本书首页
+        .container
+            .about-grids(style="overflow: auto;")
+                h3 勘误表
+                table.table
+                    tr
+                        th 序号
+                        th 页码
+                        th 原内容
+                        th 修正内容
+                    tr
+                        td #1
+                        td 171
+                        td 启动完成后再次运行“etcdctl member add”
+                        td 启动完成后再次运行“etcdctl member list”
+                    tr
+                        td #2
+                        td 172
+                        td core-03=http://10.0.2.187:2380
+                        td core-03=http://10.0.2.17:2380
+                    tr
+                        td #3
+                        td 172
+                        td Cloudinit例子的代码中使用了"172.17.8.x"的地址,与前一个中的地址不符
+                        td 应该改为与前一例子相应的"10.0.2.x"地址
+                    //tr
+                    //    td #4
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #5
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #6
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #7
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #8
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #9
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #10
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #11
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #12
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #13
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #14
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #15
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #16
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #17
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #18
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #19
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #20
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #21
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #22
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #23
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #24
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #25
+                    //    td
+                    //    td
+                    //    td
+                    //tr
+                    //    td #26
+                    //    td
+                    //    td
+                    //    td
         include inc/footer

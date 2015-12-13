@@ -7,13 +7,203 @@ html
         .banner-mini
             .container
                 include inc/navigator
-        .error-page
-            .container
-                .error-page.text-center
-                    h3
-                        | 建
-                        span 设
-                        | 中
-                    p 这个页面还在建设中,敬请期待
-                    a.button.curl-bottom-right.two(href='/') 本书首页
+        .container
+            .about-grids
+                h3 序言
+                .about-grid
+                    p CoreOS是一个非常年轻而且充满想象力的项目。 CoreOS专注于集群操作系统的定制、更新以及维护等，实现了自动将集群内的操作系统、基础软件包持续更新至最新稳定版本，并缩小更新系统所需时间到分钟以内的级别。
+                    p 自2014年登陆中国以来，CoreOS在国内掀起了不少风波。CoreOS的AppC项目制定Application Container标准部署规范，在容器部署规范上迈出了一大步； Etcd逐渐也被大多数云产品引入作为在配置管理、服务发现方面取代Zookeeper的不二选择。总之，CoreOS作为一个整体的集群操作系统，可以极大的解放App部署、弹性调度以及服务发现的复杂实施工作，开启了微服务新世界的大门，从研发流程和运维方式上面都产生了极大的改变。
+                    p 但是国内一直缺少坚持在这方面潜心研究、并将其推广到生产环境的团队和气氛，一方面在于CoreOS本身的复杂性和超前的技术路线；另一方面，国内的CaaS云计算市场，特别是编排和部署更新方面，都处于刚兴起阶段。但是作者绝对算一个在CoreOS领域保持坚持不懈，努力钻研的勇士。认识作者是在CoreOS第一个国内Meetup。当时本身也怀着对CoreOS的万分崇拜，跑了将近半个北京城去参加。作者当时大胆的提出了CoreOS不少的痛点，让我影响颇深，我也是从这个时候开始，不间断的跟作者保持在CoreOS方面技术的探讨和学习。随后作者发表了一系列关于CoreOS的文章：《漫步云端:CoreOS实践指南》，是国内学习CoreOS的必备资料。
+                    p 本书也是作者积累了2年多学习和实践经验的总结和沉淀。本书以CoreOS为基础，详细的介绍了CoreOS基础组件Fleet、Systemd、Etcd、Flannel、Rkt、Cloudinit等的配置以及对应的使用方式。理论离不开实践，特别是集群化的分布式系统，实践部分更加具有挑战性，因此作者在每一章都备有详细的实践，以引导各位读者更加深层次的掌握和领悟CoreOS，然后通过一个综合案例，再次让大家得以融汇贯通。不仅如此，作者在最后详细介绍了CoreOS生态圈的发展，重点介绍了开源版本的Borg：Kubernetets，如同主菜之后的一道美味甜点，读了之后收益颇丰。
+                    p 如果你是一个刚接触云计算，特别是CaaS(Container as a Service)的朋友，这本书可以帮助你迅速掌握目前业界最火的几款系统的使用；如果你是一个耕耘于云计算的朋友，你可以通过本书更深的了解CoreOS的前生，现在，以及未来，开阔自己的视野！
+                    p(style="text-align: right;") 段兵　百度资深工程师
+                h3 目录
+                .about-grid
+                    .col-md-4.col-sm-6
+                        h4 第1章　CoreOS简介和安装
+                        p(style="padding: 0")
+                            |1.1 CoreOS简介
+                            |<br> 1.1.1　CoreOS是什么
+                            |<br> 1.1.2　CoreOS的诞生和发展
+                            |<br> 1.1.3　CoreOS的用户体验
+                            |<br> 1.1.3.2　更快的启动速度
+                            |<br> 1.1.4　CoreOS的适应场景
+                            |<br> 1.2 CoreOS核心组件
+                            |<br> 1.3 架设CoreOS集群
+                            |<br> 1.3.1　CoreOS支持的平台
+                            |<br> 1.3.2　部署CoreOS集群
+                            |<br> 1.4　CoreOS的操作系统衍生
+                            |<br> 1.5 小结
+                    .col-md-4.col-sm-6
+                        h4 第2章 使用CoreOS中的容器
+                        p(style="padding: 0")
+                            |2.1　应用容器入门
+                            |<br> 2.1.1　什么是应用容器
+                            |<br> 2.1.2　应用容器技术的发展
+                            |<br> 2.1.3　命名空间（Namespace）
+                            |<br> 2.1.4　控制组（CGroup）
+                            |<br> 2.1.5　容器的应用场景
+                            |<br> 2.2 使用Docker容器
+                            |<br> 2.2.1　Docker容器工具概述
+                            |<br> 2.2.2　Docker命令行的基本使用
+                            |<br> 2.2.3　数据共享与备份
+                            |<br> 2.2.4　多容器通信
+                            |<br> 2.2.5　Docker API
+                            |<br> 2.3 Docker镜像制作
+                            |<br> 2.3.1　Docker镜像
+                            |<br> 2.3.2　从容器构建镜像
+                            |<br> 2.3.3　Dockerfile
+                            |<br> 2.3.4　镜像仓库
+                            |<br> 2.4 使用Rkt容器
+                            |<br> 2.4.1　Rkt简介
+                            |<br> 2.4.2　使用Rkt容器
+                            |<br> 2.4.3　镜像管理
+                            |<br> 2.4.4　Rkt容器的生命周期
+                            |<br> 2.4.5　其他命令
+                            |<br> 2.5 Rkt的容器镜像
+                            |<br> 2.5.1　AppC Spec规范
+                            |<br> 2.5.2　Aci镜像工具
+                            |<br> 2.5.3　Aci镜像签名
+                            |<br> 2.5.4　Aci镜像定义文件
+                            |<br> 2.5.5　镜像分发
+                            |<br> 2.6　小结
+                    .col-md-4.col-sm-6
+                        h4 第3章　Systemd节点资源管理
+                        p(style="padding: 0")
+                            |3.1　Systemd的服务管理模型
+                            |<br> 3.1.1　Systemd概述
+                            |<br> 3.1.2　Systemd的设计理念
+                            |<br> 3.1.3　Systemd的服务管理
+                            |<br> 3.1.4　日志管理
+                            |<br> 3.1.5　服务的生命周期
+                            |<br> 3.1.6　服务的Unit文件
+                            |<br> 3.1.7　Unit文件占位符
+                            |<br> 3.1.8　Unit模板
+                            |<br> 3.2 Systemd的系统资源管理
+                            |<br> 3.2.1　Systemd的Unit文件
+                            |<br> 3.2.2　定时器
+                            |<br> 3.2.3　路径监控器
+                            |<br> 3.2.4　数据监控器
+                            |<br> 3.2.5　挂载文件系统
+                            |<br> 3.2.6　自动挂载文件系统
+                            |<br> 3.2.7　交换分区（虚拟内存）
+                            |<br> 3.3 Systemd工具集
+                            |<br> 3.3.1　Systemd系列工具概述
+                            |<br> 3.3.2　主机名、时间、地区信息管理
+                            |<br> 3.3.3　电源管理
+                            |<br> 3.3.4　启动时间和运行状态分析
+                            |<br> 3.3.5　辅助性命令工具
+                            |<br> 3.3.6　Systemd容器
+                            |<br> 3.4 小结
+                    .col-md-4.col-sm-6.col-md-offset-2
+                        h4 第4章　Fleet跨节点服务调度
+                        p(style="padding: 0")
+                            |4.1　Fleet简介
+                            |<br> 4.1.1　Systemd服务管理的局限性
+                            |<br> 4.1.2　Fleet的服务调度
+                            |<br> 4.2 Fleet的基本操作
+                            |<br> 4.2.1　获取集群信息
+                            |<br> 4.2.2　显示集群服务
+                            |<br> 4.2.3　节点跳转
+                            |<br> 4.2.4　跨节点执行命令
+                            |<br> 4.3 通过Unit文件运行跨节点调度的服务
+                            |<br> 4.3.1　Fleet的Unit文件
+                            |<br> 4.3.2　在集群上运行服务
+                            |<br> 4.3.3　Fleet的X-Fleet段
+                            |<br> 4.3.4　模板参数
+                            |<br> 4.4 集群中的服务生命周期
+                            |<br> 4.4.1　提交服务
+                            |<br> 4.4.2　加载服务
+                            |<br> 4.4.3　启动服务
+                            |<br> 4.4.4　停止服务
+                            |<br> 4.4.5　服务自动启动
+                            |<br> 4.4.6　服务状态和日志
+                            |<br> 4.5 服务热迁移
+                            |<br> 4.6　小结
+                    .col-md-4.col-sm-6
+                        h4 第5章　Etcd分布式配置共享
+                        p(style="padding: 0")
+                            |5.1　基于Etcd的配置共享和集群组建
+                            |<br> 5.1.1　Etcd概述
+                            |<br> 5.1.2　Etcd集群的构建
+                            |<br> 5.1.3　Etcd的操作
+                            |<br> 5.1.4　Etcd集群的成员管理
+                            |<br> 5.1.5　重大故障的恢复
+                            |<br> 5.2 Etcd的应用程序接口
+                            |<br> 5.2.1　概述
+                            |<br> 5.2.2　Etcd数据操作
+                            |<br> 5.2.3　成员管理
+                            |<br> 5.2.4　集群的统计信息
+                            |<br> 5.2.5　隐藏数据节点
+                            |<br> 5.3 小结
+                    .col-md-4.col-sm-6
+                        h4 第6章　CoreOS综合案例
+                        p(style="padding: 0")
+                            |6.1 案例一：分布式服务的监控
+                            |<br> 6.1.1　案例说明
+                            |<br> 6.1.2　方案实施
+                            |<br> 6.1.3　案例延伸
+                            |<br> 6.1.4　案例总结
+                            |<br> 6.2 案例二：应用层负载均衡
+                            |<br> 6.2.1　案例说明
+                            |<br> 6.2.2　方案实施
+                            |<br> 6.2.3　案例延伸
+                            |<br> 6.2.4　案例总结
+                            |<br> 6.3 小结
+                    .col-md-4.col-sm-6
+                        h4 第7章　深入CoreOS的特性与集群架构
+                        p(style="padding: 0")
+                            |7.1　CoreOS的系统启动配置
+                            |<br> 7.1.1　用户数据文件
+                            |<br> 7.1.2　编写用户数据文件
+                            |<br> 7.1.3　验证和修改用户数据文件
+                            |<br> 7.2 CoreOS系统升级
+                            |<br> 7.2.1　具有CoreOS特色的系统升级
+                            |<br> 7.2.2　升级参数配置
+                            |<br> 7.2.3　执行系统升级
+                            |<br> 7.2.4　更好的升级策略
+                            |<br> 7.2.5　升级的回滚
+                            |<br> 7.3 CoreOS的集群架构
+                            |<br> 7.3.1　单节点架构
+                            |<br> 7.3.2　小型集群
+                            |<br> 7.3.3　开发/测试环境集群
+                            |<br> 7.3.4　产品环境集群
+                            |<br> 7.4　小结
+                    .col-md-4.col-sm-6
+                        h4 第8章　Kubernetes集群管理
+                        p(style="padding: 0")
+                            |8.1　Flannel网络规划
+                            |<br> 8.1.1　Flannel简介
+                            |<br> 8.1.2　Flannel的安装和使用
+                            |<br> 8.1.3　Flannel的配置
+                            |<br> 8.2　架设Kubernetes集群管理系统
+                            |<br> 8.2.1　Kubernetes简介
+                            |<br> 8.2.2　Kubernetes的组成
+                            |<br> 8.2.3　部署Kubernetes集群管理系统
+                            |<br> 8.2.4　Kubernetes的基本操作
+                            |<br> 8.3　Kubernetes的插件机制
+                            |<br> 8.3.1　Kubernetes的内置插件
+                            |<br> 8.3.2　SkyDNS插件
+                            |<br> 8.3.3　KubeUI插件
+                            |<br> 8.4　Kubernetes应用案例
+                            |<br> 8.4.1　案例一：留言板应用
+                            |<br> 8.4.2　案例二：在线更新应用
+                            |<br> 8.5　小结
+                    .col-md-4.col-sm-6
+                        h4 第9章　CoreOS小技巧
+                        p(style="padding: 0")
+                            |9.1　CoreOS使用技巧
+                            |<br> 9.1.1　扩展系统命令
+                            |<br> 9.1.2　运行有界面的软件
+                            |<br> 9.1.3　容器的默认语言和时区
+                            |<br> 9.1.4　JSON格式化
+                            |<br> 9.1.5　在CoreOS中安装tmux和screen
+                            |<br> 9.1.6　修改core用户的.bashrc文件
+                            |<br> 9.1.7　自定义SSH端口和配置
+                            |<br> 9.1.8　运行其他CoreOS中无法安装的软件
+                            |<br> 9.2　CoreOS周边工具
+                            |<br> 9.2.1　使用Sysdig检测容器的系统资源状态
+                            |<br> 9.2.2　使用Calico实现容器级防火墙
+                            |<br> 9.3　小结
+
         include inc/footer
