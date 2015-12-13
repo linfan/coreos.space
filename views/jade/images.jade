@@ -10,4 +10,61 @@ html
         .container
             .about-grids
                 h3 CoreOS系统镜像
+                .about-grid
+                    p
+                        |由于国内的特殊网络状况，CoreOS镜像的官方下载地址在国内的访问几乎总是处于不可用状态。本站提供CoreOS系统最新的Vagrant虚拟机镜像和ISO镜像文件，以方便希望学习和使用CoreOS系统的用户。
+                    p
+                        |在《CoreOS实践之路》一书中所使用的CoreOS版本是v835.9.0，这是一个来自Stable通道的版本，因此可以用于生产环境的服务器。镜像的下载链接为：
+                        a(href='http://pan.baidu.com/s/1o7yoX5o') 835.9.0
+                    p
+                        |当前的最新的Alpha通道版本是v891.0.0，这个版本中包含了最新的CoreOS系统特性。会在本站的
+                        a(href='/resource') 资源
+                        |页面未来也会对其中新增的重要特性进行介绍。镜像的下载地址为：
+                        a(href='http://pan.baidu.com/s/1c0JXNuK') 891.0.0
+                    p
+                        | 以上两个链接中都分别包含
+                        i coreos_production_vagrant.box
+                        | 和
+                        i coreos_production_iso_image.iso
+                        | 两个文件。它们分别为VirtualBox的虚拟机镜像文件和ISO格式镜像文件，下面详细说明这两种文件的使用方法。
+                    br
+                    ul
+                        li
+                            h4 VirtualBox虚拟机镜像
+                            p
+                                | 在《CoreOS实践之路》的第一章中介绍了通过Vagrant和VirtualBox虚拟机本地安装CoreOS系统的方法，然而在国内的大部分地方，执行了
+                                i vagrant up
+                                | 命令后，就会出现下载镜像失败的提示。此时可以下载以上任意一个
+                                i coreos_production_vagrant.box
+                                | 镜像，然后使用
+                                i vagrant box add
+                                | 命令将它添加到本地，并命名为
+                                i coreos-alpha
+                                | 。完整命令如下：
+                            pre $ vagrant box add --name coreos-alpha coreos_production_vagrant.box
+                            p
+                                | 这样命名是为了与官方GitHub上的
+                                i Vagrantfile
+                                | 文件中默认指定的镜像名称一致，从而不用再去修改
+                                i Vagrantfile
+                                | 的内容了。然后在本地用
+                                i vagrant box list
+                                | 命令就可以看到这个镜像：
+                            pre
+                                | $ vagrant box list
+                                | coreos-alpha        (virtualbox, 0)
+                                | ...
+                            p
+                                | 需要注意的是，Vagrant不支持为本地导入的镜像指定版本号标签，因此镜像的版本位置始终会显示为
+                                i 0
+                                | 。接下来直接按照书中介绍的步骤启动集群即可：
+                                pre $ vagrant up
+                        br
+                        li
+                            h4 ISO镜像
+                            p
+                                | 在《CoreOS实践之路》书中简要的介绍了使用ISO安装系统的方法，一般来说如果用户需要在裸机上(或不通过Vagrant直接在虚拟机上)安装CoreOS系统时就会需要用到这个文件。
+                                | 关于更详细的安装使用方法，建议参考
+                                a(href='https://coreos.com/os/docs/latest/booting-with-iso.html') 官方文档
+                                | 中的相关描述。
         include inc/footer

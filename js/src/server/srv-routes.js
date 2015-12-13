@@ -18,9 +18,9 @@ class Routes {
       this.status = 200;
     }));
 
-    app.use(route.get('/download', function*() {
+    app.use(route.get('/resource', function*() {
       // 这个页面是相关资源下载的入口
-      this.body = yield this.render(htmlPath + '/download');
+      this.body = yield this.render(htmlPath + '/resource');
       this.status = 200;
     }));
 
