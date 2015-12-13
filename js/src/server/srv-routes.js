@@ -42,6 +42,12 @@ class Routes {
       this.status = 200;
     }));
 
+    app.use(route.get('/keynote', function*() {
+      // 这个页面会包含CoreOS相关的技术演示文稿
+      this.body = yield this.render(htmlPath + '/keynote');
+      this.status = 200;
+    }));
+
     app.use(route.get('/cos/introduction', function*() {
       // 这个页面会包含Cos系统的介绍和安装方法,以及试用版镜像的链接
       this.body = yield this.render(htmlPath + '/cos');

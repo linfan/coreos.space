@@ -2,29 +2,41 @@ doctype html
 html
     head
         include inc/header
+        script(type='text/javascript', src='download.js')
     body
-        .banner-2
+        .banner-mini
             .container
                 include inc/navigator
         .container
             .about-grids
                 h3 资源下载
-                .col-md-3
-                    img(src="csphere.png" style="width: 100%; height: auto;")
-                .col-md-9.about-grid
-                    h4 CoreOS系统镜像
-                    p 由于CoreOS官方虚拟机镜像的存储服务器在国内访问不稳定，部分国内用户在尝试本地虚拟机安装CoreOS系统时会遇到无法获取镜像的情况。这里提供一个国内网盘下载地址，可以结合书中的步骤使用。
+                .clearfix
+                div(style="height: 2em;")
                 .clearfix
                 .col-md-3
-                    img(src="csphere.png" style="width: 100%; height: auto;")
+                    img(src="download-images.png" style="width: 100%; height: auto;")
                 .col-md-9.about-grid
-                    h4 希云COS系统介绍和镜像
-                    p COS是一个基于CoreOS定制设计和开发的企业级操作系统。它具备CoreOS系统的持续升级特性，使得操作系统级别的整体回滚能力，并提供容器安全防护、内置网络管理和服务发现系统。
+                    a(href='/images')
+                        h4 CoreOS系统镜像
+                        p 由于CoreOS官方虚拟机镜像的存储服务器在国内访问不稳定，部分国内用户在尝试本地虚拟机安装CoreOS系统时会遇到无法获取镜像的情况。这里提供一个国内网盘下载地址，可以结合书中的步骤使用。
+                .clearfix
+                div(style="height: 3em;")
                 .clearfix
                 .col-md-3
-                    img(src="csphere.png" style="width: 100%; height: auto;")
+                    img(src="download-cos.png" style="width: 100%; height: auto;")
                 .col-md-9.about-grid
-                    h4 Etiam cursus augue
-                    p Autem vel eum iriure dolor in hendrerit in volestie consequat, vel illum dolore eu feugiat nulla elenit augue duis dolore te feugait nulla facilisi.
+                    a(href='/cos/introduction')
+                        h4 希云COS系统介绍和镜像
+                        p COS是一个基于CoreOS定制设计和开发的企业级操作系统。它具备CoreOS系统的持续升级特性，使得操作系统级别的整体回滚能力，并提供容器安全防护、内置网络管理和服务发现系统。
                 .clearfix
+                div(style="height: 3em;")
+                .clearfix
+                .col-md-3
+                    img(src="download-keynote.png" style="width: 100%; height: auto;")
+                .col-md-9.about-grid
+                    a(href='/keynote')
+                        h4 CoreOS演示文稿
+                        p 本书作者在许多社区活动中分享过CoreOS相关的技术话题，这里收集了一些使用过的PPT演示文稿。
+                .clearfix
+                div(style="height: 3em;")
         include inc/footer

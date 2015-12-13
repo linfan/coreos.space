@@ -1,3 +1,5 @@
+// 基本样式
+
 body
   margin: 0
   padding: 0
@@ -21,12 +23,11 @@ $bannerImg: 'banner.jpg'
 .banner
   background: url($bannerImg) no-repeat
   background-size: cover
-  min-height: 780px
+  min-height: 700px
 
-.banner-2
+.banner-mini
   background: url($bannerImg) no-repeat
   background-size: cover
-  min-height: 60px
 
 .logo
   float: left
@@ -71,7 +72,7 @@ $bannerImg: 'banner.jpg'
       -moz-transition: 0.8s all
       -o-transition: 0.85s all
 
-//--hover-top-nav--
+// 导航栏样式
 
 a.hvr-shutter-out-horizontal
   display: inline-block
@@ -120,7 +121,7 @@ a.hvr-shutter-out-horizontal
     -webkit-transform: scaleX(1)
     transform: scaleX(1)
 
-// --hover-top-nav--
+// 主页顶端展示栏
 
 .banner-left
   margin-top: 7em
@@ -151,14 +152,14 @@ a.hvr-shutter-out-horizontal
 .banner-right
   position: relative
 
-.app-img
+.book-img
   position: absolute
   top: 0
   right: 0
 
-// --services--
+// 推荐者栏
 
-.service-section-grids
+.recommendation-section-grids
   h3
     color: #4e4e4e
     font-weight: 600
@@ -189,10 +190,10 @@ a.hvr-shutter-out-horizontal
 .ava-icon
   width: 80px
 
-.service-section
+.recommendation-section
   padding: 6em 0
 
-.service-section-head
+.recommendation-section-head
   h3
     color: #394b50
     font-size: 2.2em
@@ -204,7 +205,7 @@ a.hvr-shutter-out-horizontal
     font-size: 1.2em
     font-weight: 500
 
-.service-section-grid
+.recommendation-section-grid
   margin-top: 4em
   h4
     color: #394b50
@@ -218,7 +219,7 @@ a.hvr-shutter-out-horizontal
     font-weight: 400
     line-height: 1.8em
 
-//--showcase--
+// 首页内容简介栏
 
 .about_left img
   width: 100%
@@ -260,9 +261,9 @@ a.hvr-shutter-out-horizontal
   margin: 0
   background: #709DCA
 
-//--features--
+// 首页购书地址栏
 
-.features-head
+.purchase-head
   text-align: center
   h3
     color: #4e4e4e
@@ -277,17 +278,17 @@ a.hvr-shutter-out-horizontal
     font-size: 1.4em
     font-weight: 300
 
-.features-gird
+.purchase-gird
   margin-top: 1em
   i
     font-style: normal
     color: #709DCA
 
-.features-grids
+.purchase-grids
   margin-bottom: 4em
   white-space: nowrap
 
-.features-gird
+.purchase-gird
   h4
     padding-top: 18px
     margin-top: 0.5em
@@ -311,230 +312,12 @@ a.hvr-shutter-out-horizontal
     border-bottom: 1px solid #E2E2E2
     padding: 1em 0 2em
 
-//--footer--
 
-.footer
-  background: #303030
-  height: 680px
-  i
-    font-style: normal
-    font-weight: 900
-    color: #709DCA
-
-.footer-bottom
-  padding: 3em 0
-
-.footer-head
-  text-align: center
-  color: #fff
-  padding-top: 6em
-  h3
-    font-weight: 100
-    font-size: 8em
-    border-bottom: 1px solid #999
-    padding-bottom: 10px
-    span
-      font-weight: 900
-  h5
-    font-size: 2em
-    font-weight: 200
-    text-transform: uppercase
-    color: #919191
-
-.footer-about
-  h4
-    color: #fff
-    font-size: 2em
-    font-weight: 900
-    text-transform: uppercase
-  h6
-    color: #fff
-    font-size: 17px
-    font-weight: 400
-    margin: 25px 0
-    line-height: 1.5em
-  h5
-    color: #fff
-    font-size: 1.3em
-    font-weight: 300
-    word-spacing: 3px
-  p
-    text-transform: uppercase
-    font-weight: 100
-  h5 span
-    background: #709DCA
-    margin: 0 3px
-    padding: 2px 6px
-    font-weight: 400
-
-.footer-right ul
-  list-style: none
-  li
-    display: inline-block
-    color: #fff
-
-.footer-about ul li
-  display: inline-block
-  color: #fff
-  a
-    color: #fff
-    text-transform: uppercase
-
-.footer-right ul li
-  p
-    color: #fff
-    text-transform: uppercase
-    font-weight: 100
-    float: left
-  a
-    color: #fff
-    text-transform: uppercase
-    &:hover
-      color: #709DCA
-
-.footer-about ul
-  margin: 18px 0
-
-$footerAboutImg: 'footer-about.png'
-
-li span
-  &.call
-    width: 20px
-    height: 20px
-    background: url($footerAboutImg) no-repeat 0 0
-    display: inline-block
-    vertical-align: text-bottom
-    margin-right: 10px
-  &.msg
-    width: 20px
-    height: 20px
-    background: url($footerAboutImg) no-repeat -20px 0
-    display: inline-block
-    vertical-align: inherit
-    margin-right: 10px
-  &.locator
-    width: 20px
-    height: 20px
-    background: url($footerAboutImg) no-repeat -40px 0
-    display: inline-block
-    vertical-align: baseline
-    margin-right: 10px
-
-.footer-news h4
-  color: #fff
-  font-size: 2em
-  font-weight: 900
-  text-transform: uppercase
-
-.footer-img
-  width: 30%
-  float: left
-
-.footer-right
-  width: 69%
-  float: left
-  h5
-    font-size: 1.3em
-    text-transform: uppercase
-    color: #fff
-    border-bottom: 1px solid #999
-    padding: 3px 0 7px
-    line-height: 1.4em
-    margin-bottom: 12px
-  ul li
-    display: inline-block
-    margin: 0 3px
-
-$newsSpriteImg: 'news-sprite.png'
-$spriteImg: 'img-sprite.png'
-
-i
-  &.chat
-    width: 20px
-    height: 20px
-    background: url($newsSpriteImg) no-repeat -20px 0
-    display: inline-block
-    vertical-align: bottom
-    float: left
-  &.date
-    width: 20px
-    height: 20px
-    background: url($newsSpriteImg) no-repeat 0 0
-    display: inline-block
-    vertical-align: bottom
-    float: left
-
-.footer-news-info
-  margin-top: 2.2em
-
-.flickr-photo
-  h4
-    color: #fff
-    font-size: 2em
-    font-weight: 900
-    text-transform: uppercase
-  img
-    margin-top: 2.5em
-
-//--copyrights--
+// 页脚版权信息栏
 
 $copyrightImg: 'copyrights.png'
-
-.social-icons
-  float: right
-  width: 21%
-  margin: 0 auto
-  a span
-    width: 30px
-    height: 29px
-    background: url($copyrightImg) no-repeat 0 0
-    display: inline-block
-    margin: 0 5px
-    &.beh
-      background-position: 0 0
-      &:hover
-        background-position: 0px -30px
-        transition: 1s all
-        -webkit-transition: 1s all
-        -moz-transition: 1s all
-        -o-transition: 1s all
-        transform: rotate(-360deg)
-    &.face
-      background-position: -30px 0
-      &:hover
-        background-position: -30px -30px
-        transition: 1s all
-        -webkit-transition: 1s all
-        -moz-transition: 1s all
-        -o-transition: 1s all
-        transform: rotate(-360deg)
-    &.pin
-      background-position: -58px 0
-      &:hover
-        background-position: -58px -30px
-        transition: 1s all
-        -webkit-transition: 1s all
-        -moz-transition: 1s all
-        -o-transition: 1s all
-        transform: rotate(-360deg)
-    &.br
-      background-position: -88px 0
-      &:hover
-        background-position: -88px -30px
-        transition: 1s all
-        -webkit-transition: 1s all
-        -moz-transition: 1s all
-        -o-transition: 1s all
-        transform: rotate(-360deg)
-    &.in
-      background-position: -119px 0
-      &:hover
-        background-position: -119px -30px
-        transition: 1s all
-        -webkit-transition: 1s all
-        -moz-transition: 1s all
-        -o-transition: 1s all
-        transform: rotate(-360deg)
+$newsSpriteImg: 'news-sprite.png'
+$spriteImg: 'img-sprite.png'
 
 .copyrights
   background: #252525
@@ -545,14 +328,10 @@ $copyrightImg: 'copyrights.png'
     a
       color: #709DCA
 
-
-//--about--
+// 下载页面项目栏
 
 .about
   padding: 5em 0
-
-.header-top
-  padding: 2em 0
 
 .about-grids h3
   color: #334D72
@@ -619,134 +398,8 @@ span.about-icon
     color: #999
     line-height: 1.6em
 
-.team
-  text-align: center
-  padding: 3em 0 3em
-  h2
-    color: #334D72
-    text-align: center
-    font-size: 2em
-    font-weight: 600
-    padding: 0
 
-.col-md-3.team-grid-left
-  border: 5px solid #314A72
-  margin-right: 11px
-  padding: 0
-  width: 24%
-  &:hover
-    border: 5px solid #FF6131
-
-.team-grid-left
-  h4
-    font-size: 1.5em
-    font-weight: 700
-    color: #22383f
-    padding: 0.5em 0
-    background: #F2F2F2
-  p
-    font-size: 1.2em
-    color: #999
-    padding: 6px 0
-    background: #F2F2F2
-
-.team-grid
-  padding: 3em 0 0
-
-.about
-  padding: 2.6em 0 2em
-
-.team-top img
-  width: 100%
-  margin: 0 auto
-
-
-//--features--
-
-.feature-text
-  h2
-    color: #304770
-    font-size: 2.5em
-    margin: 0 0 .7em
-    font-weight: 500
-    text-align: center
-    text-transform: uppercase
-  p
-    line-height: 1.6em
-    color: #999
-    margin-bottom: 2em
-    font-size: .96em
-
-.feature-section
-  margin-top: 2em
-
-.feature-grid
-  margin-bottom: 3em
-
-.feature-grid-pic
-  float: left
-  width: 25%
-  margin-right: 2.5%
-
-.feature-grid-info
-  h3
-    color: #314A72
-    font-size: 1.2em
-    font-weight: 600
-    line-height: 1.5em
-    padding: 0 0 .5em
-  p
-    line-height: 1.6em
-    color: #999
-    margin-bottom: 2em
-    font-size: .96em
-
-.feature-grid:nth-child(2)
-  margin-bottom: 0
-
-.feature-grid-pic img
-  width: 100%
-
-.feature-main
-  margin: 4em 0 2em
-
-.main.feature-main h5
-  color: #304770
-  font-size: 2.5em
-  margin: 0 0 2.2em
-  font-weight: 500
-  text-align: center
-  text-transform: uppercase
-
-.service-top
-  margin-bottom: 3.5em
-
-.service-pic
-  width: 10%
-  float: left
-
-.service-info
-  float: left
-  width: 75%
-  margin-left: 5%
-  h3
-    color: #151515
-    font-weight: 300
-    font-size: 2.1em
-    letter-spacing: 1px
-    margin-bottom: 0.5em
-  p
-    color: #999
-    font-weight: 400
-    font-size: 0.96em
-    line-height: 1.7em
-
-
-//--blog--
-
-.Error-found
-  padding-top: 3.5em
-  min-height: 730px
+// 404页面
 
 .error-page
   margin: 3em 0
@@ -774,8 +427,6 @@ a
     width: 15%
     font-size: 1.2em
     font-weight: 500
-
-//
 
 .curl-bottom-right
   display: inline-block
@@ -807,8 +458,7 @@ a.button.curl-bottom-right
     width: 0
     bottom: 0
     right: 0
-    background: #FF6131
-    /* IE9
+    background: #FF6131  // IE9
     background: linear-gradient(315deg, #fff 45%, #FF6131 50%, #FF6131 56%, #FF6131 80%)
     box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4)
     -webkit-transition-duration: 0.3s
@@ -820,242 +470,10 @@ a.button.curl-bottom-right
     width: 25px
     height: 25px
 
+// 分隔器类型
 
-//--Portfolio--
-
-.project
-  padding-bottom: 2em
-
-//-----------------------------------------------------------------------------------
-//	Strip
-//-----------------------------------------------------------------------------------
-
-.b-link-stripe
-  position: relative
-  display: inline-block
-  vertical-align: top
-  font-weight: 300
-  overflow: hidden
-  .b-wrapper
-    position: absolute
-    width: 100%
-    height: 100%
-    top: 0
-    left: 0
-    text-align: center
-    color: #ffffff
-    overflow: hidden
-  .b-line
-    position: absolute
-    top: 0
-    bottom: 0
-    width: 20%
-    background: rgba(15, 207, 140, 0.9)
-    transition: all 0.5s linear
-    -moz-transition: all 0.5s linear
-    -o-transition: all 0.5s linear
-    -webkit-transition: all 0.5s linear
-    opacity: 0
-    visibility: hidden
-
-//-----------------------------------------------------------------------------------
-//	Animation effects
-//-----------------------------------------------------------------------------------
-
-.b-animate-go
-  text-decoration: none
-
-.b-animate
-  transition: all 0.5s
-  -moz-transition: all 0.5s
-  -o-transition: all 0.5s
-  -webkit-transition: all 0.5s
-  visibility: hidden
-  font-size: 15px
-  font-weight: 400
-  width: 40%
-  line-height: 1.3em
-  margin: 0 auto
-  top: 35%
-  img
-    margin-top: 12%
-    display: inline
-
-// lt-ie9
-
-.b-animate-go:hover .b-animate
-  visibility: visible
-
-.b-from-left
-  position: relative
-  left: -100%
-
-.b-animate-go:hover .b-from-left
-  left: 0
-
-span.m_4
-  font-size: 14px
-  font-weight: 400
-
-p.m_5
-  margin: 2% auto 5%
-  width: 70%
-  color: #283A47
-  font-size: 1.1em
-  font-weight: 600
-  line-height: 1.5em
-  text-align: center
-
-.project-top h3
-  float: left
-  color: #324B73
-  font-weight: 900
-  font-size: 2em
-  margin-top: 2em
-
-ul#filters
-  text-align: right
-  margin: 50px auto
-
-//--team--
-
-.col_1_of_4:first-child
-  margin-left: 0
-
-.span_1_of_4
-  width: 22.8%
-
-.col_1_of_4
-  display: block
-  float: left
-  margin: 1% 0 1% 2.6%
-  background: #FFF
-
-.b-wrapper:hover
-  background: rgba(49, 153, 255, 0.48)
-  transition: 0.5s all
-  -webkit-transition: 0.5s all
-  -o-transition: 0.5s all
-  -moz-transition: 0.5s all
-
-// lt-ie9
-
-.b-link-stripe
-  &:hover .b-line
-    visibility: visible
-  .b-line1
-    left: 0
-  .b-line2
-    left: 20%
-    transition-delay: 0.1s !important
-    -moz-transition-delay: 0.1s !important
-    -o-transition-delay: 0.1s !important
-    -webkit-transition-delay: 0.1s !important
-  .b-line3
-    left: 40%
-    transition-delay: 0.2s !important
-    -moz-transition-delay: 0.2s !important
-    -o-transition-delay: 0.2s !important
-    -webkit-transition-delay: 0.2s !important
-  .b-line4
-    left: 60%
-    transition-delay: 0.3s !important
-    -moz-transition-delay: 0.3s !important
-    -o-transition-delay: 0.3s !important
-    -webkit-transition-delay: 0.3s !important
-  .b-line5
-    left: 80%
-    transition-delay: 0.4s !important
-    -moz-transition-delay: 0.4s !important
-    -o-transition-delay: 0.4s !important
-    -webkit-transition-delay: 0.4s !important
-  &:hover .b-line
-    opacity: 1
-
-#filters
-  margin: 3% 0
-  padding: 0
-  list-style: none
-  text-align: center
-  li
-    display: inline
-    span
-      display: block
-      padding: 8px 25px
-      text-decoration: none
-      color: #414141
-      cursor: pointer
-      font-size: 15px
-      font-weight: 700
-      text-transform: uppercase
-      margin: 0 8px 0 0
-      background: #fff
-      &.active, &:hover
-        background: #FF6131
-        color: #ffffff
-        transition: 0.5s all ease
-        -webkit-transition: 0.5s all ease
-        -moz-transition: 0.5s all ease
-        -o-transition: 0.5s all ease
-
-#portfoliolist .portfolio
-  -webkit-box-sizing: border-box
-  -moz-box-sizing: border-box
-  -o-box-sizing: border-box
-  width: 32.33%
-  display: none
-  float: left
-  overflow: hidden
-  margin: 0 1% 1% 0
-  background: none
-
-.portfolio.icon.mix_all
-  padding: 0
-
-div#portfoliolist
-  padding: 0.5% 0
-
-.project h5
-  color: #334D72
-  text-align: center
-  font-size: 2.6em
-  font-weight: 600
-  padding: 1em 0 0
-
-.portfolio-wrapper
-  overflow: hidden
-  position: relative !important
-  cursor: pointer
-
-.portfolio
-  img
-    max-width: 100%
-    transition: all 300ms !important
-    -webkit-transition: all 300ms !important
-    -moz-transition: all 300ms !important
-  .label
-    position: absolute
-    width: 100%
-    height: 40px
-    bottom: -40px
-  .label-bg
-    background: #22B4B8
-    width: 100%
-    height: 100%
-    position: absolute
-    top: 0
-    left: 0
-  .label-text
-    color: #fff
-    position: relative
-    z-index: 500
-    padding: 5px 8px
-  .text-category
-    display: block
-    font-size: 12px
-    text-transform: uppercase
-
-// Self Clearing Goodness
+.container
+    padding-bottom: 25px
 
 .container:after
   content: "\0020"
@@ -1065,6 +483,9 @@ div#portfoliolist
   visibility: hidden
 
 .clearfix
+  zoom: 1
+  &:after
+    clear: both
   &:before, &:after
     content: '\0020'
     display: block
@@ -1073,29 +494,6 @@ div#portfoliolist
     width: 0
     height: 0
 
-.row
-  &:before
-    content: '\0020'
-    display: block
-    overflow: hidden
-    visibility: hidden
-    width: 0
-    height: 0
-  &:after
-    content: '\0020'
-    display: block
-    overflow: hidden
-    visibility: hidden
-    width: 0
-    height: 0
-    clear: both
-
-.clearfix:after
-  clear: both
-
-.row, .clearfix
-  zoom: 1
-
 .clear
   clear: both
   display: block
@@ -1103,106 +501,6 @@ div#portfoliolist
   visibility: hidden
   width: 0
   height: 0
-
-
-//--contact us--
-
-.contact
-  padding-top: 2em
-
-.contact-main h3, .about-main h3, .advn-main h3, .team-top h3, .services-main h3, .add-mian h3, .clients-main h3, .login-main h3, .rgstr-top h3
-  font-size: 2.6em
-  font-weight: 600
-  text-align: center
-  color: #3A577F
-  text-transform: uppercase
-  margin: 0 0 2em
-
-.contact-top-one
-  h4
-    color: #3A577F
-    font-size: 1.5em
-    font-weight: 600
-    margin: 0
-  h6
-    color: #858585
-    font-size: 1em
-    font-weight: 700
-    line-height: 1.6em
-    margin: 1em 0
-  span
-    display: block
-  p
-    color: #858585
-    font-size: 1em
-    margin: 1em 0
-    line-height: 1.8em
-    a
-      color: #858585
-      font-size: 1em
-      margin: 1em 0
-      line-height: 1.8em
-      &:hover
-        color: #3A577F
-        text-decoration: none
-        transition: 0.5s all
-        -webkit-transition: 0.5s all
-        -moz-transition: 0.5s all
-        -o-transition: 0.5s all
-
-.contact-top-right form
-  input[type="text"]
-    width: 32.95%
-    color: #898888
-    outline: none
-    font-size: 1em
-    padding: 10px 10px
-    margin-bottom: 1em
-    border: solid 1px #3A577F
-    -webkit-appearance: none
-  textarea
-    resize: none
-    width: 100%
-    color: #898888
-    font-size: 1em
-    outline: none
-    padding: 10px 10px
-    border: solid 1px #3A577F
-    min-height: 12em
-    -webkit-appearance: none
-
-.sub-button
-  input[type="submit"]
-    border: none
-    outline: none
-    color: #fff
-    background: #3A577F
-    padding: 9px 28px
-    font-size: 1.2em
-    font-weight: 600
-    -webkit-appearance: none
-    float: left
-    &:hover
-      background: #FF6131
-      transition: 0.5s all
-      -webkit-transition: 0.5s all
-      -moz-transition: 0.5s all
-      -o-transition: 0.5s all
-  margin-top: 1.5em
-  text-align: center
-
-.contact-top
-  margin-top: 3em
-
-.contact-bottom
-  iframe
-    width: 100%
-    height: 400px
-  margin: 4em 0
-
-.about-section
-  padding: 2em 0 2em 0
-
 
 //---------------------------------------------------------
 //-- responsive                                          --
@@ -1222,7 +520,7 @@ div#portfoliolist
     min-height: 732px
   .logo a img
     width: 200px
-  .app-img
+  .book-img
     width: 80%
   .about_right
     padding: 30px 46px 40px 25px
@@ -1245,11 +543,11 @@ div#portfoliolist
     padding-top: 2em
   .features
     padding: 3em 0 0
-  .service-section-grids
+  .recommendation-section-grids
     padding: 6em 0 5em 0
   .logo a img
     width: 180px
-  .app-img
+  .book-img
     width: 80%
   .about_right
     padding: 20px 46px 30px 25px
@@ -1266,37 +564,22 @@ div#portfoliolist
       font-size: 2.0em
   .banner
     min-height: 635px
-  .app-img
+  .book-img
     width: 68%
   .banner-left
     margin: 5em 0
     padding: 0
   .logo a img
     width: 150px
-  .service-section
+  .recommendation-section
     padding: 4em 0
-  .features-gird h3
+  .purchase-gird h3
     font-size: 1.3em
-  .footer
-    height: 602px
-  .footer-head h3
-    font-size: 7em
-  .footer-img
-    width: 37%
-  .footer-right
-    width: 55%
-  .social-icons
-    width: 24%
   ul li a
     font-size: 12px
-  .footer-right h5
-    font-size: 1em
-    margin-bottom: 6px
-  .flickr-photo h4
-    font-size: 1.8em
   .banner
     min-height: 80px
-  .service-section-grid h4
+  .recommendation-section-grid h4
     margin-bottom: 0.5em
   .col-md-3.team-grid-left
     margin-right: 9px
@@ -1310,9 +593,9 @@ div#portfoliolist
       margin: 1em 0 2em
       font-size: 0.875em
     padding: 14px 46px 27px 25px
-  .service-section-grids
+  .recommendation-section-grids
     padding: 6em 0 3em
-  .service-section-grid
+  .recommendation-section-grid
     margin-top: 2em
   .container
     padding-bottom: 15px
@@ -1373,11 +656,11 @@ $navIconImg: 'nav-icon.png'
       font-size: 1.6em
     p
       font-size: 1.2em
-  .app-img img
+  .book-img img
     margin-top: 1em
   .banner
     min-height: 50px
-  .app-img
+  .book-img
     top: -35px
     right: 5%
     width: 29%
@@ -1389,7 +672,7 @@ $navIconImg: 'nav-icon.png'
     a
       font-size: 1em
       padding: 7px 16px
-  .service-section-grids
+  .recommendation-section-grids
     padding: 5em 0 3em
     h3
       font-size: 2.1em
@@ -1439,7 +722,7 @@ $navIconImg: 'nav-icon.png'
       background: url($spriteImg) no-repeat -130px -62px
       display: inline-block
       background-size: 360px
-  .features-gird
+  .purchase-gird
     width: 33.333%
     float: left
     h3
@@ -1451,14 +734,6 @@ $navIconImg: 'nav-icon.png'
       font-size: 2em
     p
       font-size: 0.9em
-  .footer-head h3
-    font-size: 4em
-  .footer-about
-    h6
-      font-size: 13px
-      margin: 10px 0
-    h5
-      font-size: 1.1em
   .col-md-4
     &.footer-about, &.footer-news
       width: 100%
@@ -1513,76 +788,18 @@ $navIconImg: 'nav-icon.png'
       margin: 0
   .feature-main
     margin: 1em 0 0
-  .service-top
-    width: 50%
-    float: left
-    margin-bottom: 0.5em
-  .service-bottom
-    width: 50%
-    float: left
-  .service-info
-    float: left
-    width: 75%
-    margin-left: 11%
   .main.feature-main h5
     padding-bottom: 0
     margin: 0 0 1.2em
-  .service-info
-    h3
-      margin-bottom: .3em
-      font-size: 1.5em
-    p
-      margin-bottom: 2em
-      line-height: 1.5em
-  .col-md-4.contact-top-left
-    width: 34%
-    float: left
-  .col-md-8.contact-top-right
-    float: left
-    width: 66%
-  .contact-top-right form input[type="text"]
-    width: 32.8%
-  .contact-bottom
-    margin: 2em 0 1em
-  .team
-    padding: 1em 0 3em
-  .project-top h3
-    float: none
-    font-size: 1.5em
-    text-align: center
-    margin-top: 0
-  ul#filters
-    text-align: center
-    margin: 22px auto 0
-  .project h5
-    padding: .5em 0 .5em
-  .footer-img
-    width: 15%
-  .footer-right
-    width: 37%
-    margin-top: 20px
-  .footer-about h4, .footer-news h4
-    font-size: 1.7em
-    font-weight: 600
-  .flickr-photo
-    h4
-      font-size: 1.7em
-      font-weight: 600
-    img
-      margin-top: 1.5em
   a.button.curl-bottom-right.two
     width: 24%
-  .b-animate
-    width: 67%
-  div#portfoliolist
-    padding: 4.5% 0
   .contact-main h3, .about-main h3, .advn-main h3, .team-top h3, .services-main h3, .add-mian h3, .clients-main h3, .login-main h3, .rgstr-top h3
     margin-bottom: 1em
   .container
     padding-bottom: 15px
 
 @media (max-width: 640px)
-  .app-img
+  .book-img
     top: -5px
   .icon
     width: 17%
@@ -1597,31 +814,17 @@ $navIconImg: 'nav-icon.png'
     a
       font-size: 0.875em
       padding: 6px 16px
-  .features-head
+  .purchase-head
     h3
       font-size: 2.5em
     p
       font-size: 1.1em
       padding: 10px 0 0
-  .features-gird
+  .purchase-gird
     width: 50%
     p
       font-size: 0.9em
       width: 90%
-  .footer-head h3
-    font-size: 4em
-  .footer-right
-    width: 45%
-  .footer-news-info
-    width: 100%
-    margin: 17px auto
-  .footer-img
-    margin-right: 17px
-  .footer-right h5
-    margin: 12px 0
-    padding-bottom: 12px
-  .footer
-    height: 1000px
   .copyrights p
     float: none
     text-align: center
@@ -1632,10 +835,6 @@ $navIconImg: 'nav-icon.png'
     text-align: center
   .copyrights
     padding: 2em 0 0
-  .footer-news h4
-    padding-bottom: 18px
-  .footer-about h4
-    font-size: 2.1em
   .col-md-4.about-left
     padding: 0
     text-align: center
@@ -1650,66 +849,7 @@ $navIconImg: 'nav-icon.png'
     width: 23%
     &:nth-child(4)
       margin-right: 0
-  .team-grid-left
-    h4
-      font-size: 1em
-    p
-      font-size: .8em
-  .team
-    padding: 0 0 3em
-  .feature-grid-pic
-    margin: 0 auto
-    text-align: center
-    img
-      width: 100%
-      padding-right: 1em
-  .feature-grid-info
-    float: none
-    width: 100%
-    margin-left: 0
-  .feature-grid
-    margin-bottom: 0
-  .feature-main
-    margin: 0
-  .main.feature-main h5
-    padding-bottom: 1.5em
-  .service-top
-    width: 50%
-    float: left
-    margin-bottom: 0.5em
-    padding: 0
-  .service-info
-    width: 74%
-    margin-left: 15%
-    h3
-      font-size: 1em
-      font-weight: 600
-  .contact-top-right form input[type="text"]
-    width: 32.7%
-  .project h5
-    padding: .5em 0 .5em
-    font-size: 2em
-  .project-top h3
-    float: none
-    font-size: 1.5em
-    margin-top: 0
-    text-align: center
-  ul#filters
-    text-align: center
-    margin: 25px auto
-  div#portfoliolist
-    padding: 0 0
-  .project
-    padding-bottom: 1em
-  #filters li span
-    padding: 4px 15px
-    font-size: 13px
-    margin: 0 0 0 0
-  .b-animate
-    font-size: 13px
-    top: 28%
-    width: 66%
-  .features-grids
+  .purchase-grids
     margin-bottom: 2em
   .about-grid
     h4
@@ -1741,13 +881,13 @@ $navIconImg: 'nav-icon.png'
     p
       font-size: 0.9em
     margin: 0 0 1.5em
-  .service-section-grids p
+  .recommendation-section-grids p
     font-size: 1.2em
   .about_right
     width: 100%
-  .service-section-grids
+  .recommendation-section-grids
     padding: 4em 0 3em
-  .about_left, .features-gird p
+  .about_left, .purchase-gird p
     width: 100%
   .team-grid-left:nth-child(4)
     margin: 15px auto 0
@@ -1756,30 +896,28 @@ $navIconImg: 'nav-icon.png'
     float: none
   a.button.curl-bottom-right.two
     width: 45%
-  .service-section-grid p
+  .recommendation-section-grid p
     font-size: 0.9em
   .about_right
     padding: 16px 25px 26px 21px
-  .features-gird
+  .purchase-gird
     width: 100%
     float: none
     margin: 15px auto 0
     padding: 0 20px 0 20px
   .service-grid
     padding: 0
-  .team-grid
-    padding: 1em 0 0
   .main.feature-main h5
     padding-bottom: 0
     margin: 0 0 1em
   .footer
     height: 1030px
-  .features-gird h3
+  .purchase-gird h3
     font-size: .89em
     margin-top: 5%
   .footer-head h3
     font-size: 3.4em
-  .features-head h3
+  .purchase-head h3
     font-size: 2.1em
   .col-md-4
     &.about-left
@@ -1798,52 +936,9 @@ $navIconImg: 'nav-icon.png'
     width: 14%
     float: left
     margin: 18px 0
-  .col-md-3.team-grid-left
-    margin: 15px auto 0
-    width: 67%
-    text-align: center
-    float: none
-  .feature-grid-pic
-    width: 100%
-    margin: 0 auto 5%
-  .service-top, .service-bottom
-    width: 100%
-  .col-md-4.contact-top-left
-    width: 100%
-    float: none
-  .col-md-8.contact-top-right
-    float: none
-    width: 100%
-  .contact-top
-    margin-top: 0
-  .contact-main h3, .about-main h3, .advn-main h3, .team-top h3, .services-main h3, .add-mian h3, .clients-main h3, .login-main h3, .rgstr-top h3
-    margin-bottom: 1em
-  .b-animate
-    font-size: 11px
-    top: 22%
-    width: 78%
-  .footer-img
-    margin-right: 10px
-    width: 25%
-  .footer-right
-    width: 64%
-  .footer-bottom
-    padding: 2em 0
-  .col-md-3.team-grid-left:nth-child(4)
-    margin: 15px auto 0
-    width: 67%
-    text-align: center
-    float: none
-  .service-info
-    width: 81%
-    margin-left: 9%
-  #portfoliolist .portfolio
-    width: 49%
-  .contact-bottom iframe
-    height: 300px
 
 @media (max-width: 320px)
-  .app-img
+  .book-img
     top: 68px
     width: 43%
   .banner-left
@@ -1855,47 +950,20 @@ $navIconImg: 'nav-icon.png'
       font-size: .7em
     p
       font-size: .6em
-  .app-img
+  .book-img
     img
       margin-top: 0
     top: 11px
     width: 40%
     right: 1%
-  .service-section
+  .recommendation-section
     padding: 2em 0 0
-  .features-head h3
+  .purchase-head h3
     font-size: 1.3em
   .features
     padding: 1.5em 0 0
-  .features-gird
+  .purchase-gird
     padding: 0 10px 0 10px
-  .footer-logo img
-    padding: 1em
-    margin: 0 auto
-    width: 45%
-  .footer-head
-    h5
-      font-size: 1.3em
-    h3
-      font-size: 2.2em
-      padding: 10px 0
-  .footer-bottom
-    padding: 1em 0
-  .footer-about
-    h4
-      font-size: 1.5em
-    h6
-      font-size: 12px
-    ul
-      margin: 12px 0
-  .footer-news h4
-    font-size: 1.5em
-  .footer-right h5
-    font-size: .9em
-  .flickr-photo h4
-    font-size: 1.5em
-  .footer
-    height: 995px
   .copyrights
     padding: 1em 0 0
   .about
@@ -1915,28 +983,6 @@ $navIconImg: 'nav-icon.png'
     width: 14%
     margin: 0 0 76px 0
     font-size: 10px
-  .team h2
-    padding: 10px 0
-  .team-grid
-    padding: 0
-  .team
-    padding: 0 0 2em
-  .feature-text
-    h2
-      font-size: 2em
-      margin-bottom: 0.2em
-    p
-      font-size: .8em
-      margin-bottom: 0
-  .feature-grid-info p
-    font-size: .8em
-  .main.feature-main h5
-    padding-bottom: 0.9em
-    font-size: 1.5em
-  .service-info p
-    margin-bottom: 1em
-    font-size: 0.8em
-    line-height: 1.6em
   .error-page
     h3
       font-size: 10em
@@ -1949,19 +995,6 @@ $navIconImg: 'nav-icon.png'
   .error-page
     margin: 0 0
     min-height: 366px
-  .contact-main h3, .about-main h3, .advn-main h3, .team-top h3, .services-main h3, .add-mian h3, .clients-main h3, .login-main h3, .rgstr-top h3
-    margin-bottom: .5em
-    font-size: 1.7em
-  .contact
-    padding-top: 1em
-  .col-md-4.contact-top-left, .col-md-8.contact-top-right
-    padding: 0
-  .contact-top-right form input[type="text"]
-    width: 100%
-  .contact-bottom iframe
-    height: 180px
-  .contact-top-right form textarea
-    min-height: 6em
   .banner-top
     padding: 1.5em 0
   .logo a img
@@ -1969,42 +1002,6 @@ $navIconImg: 'nav-icon.png'
     margin-top: 4px
   .top-menu ul
     top: 12%
-  #portfoliolist .portfolio
-    width: 48%
-    margin: 0 2% 2% 0
-  #filters li span
-    padding: 4px 11px
-  .project h5
-    font-size: 1.7em
-  .project-top h3
-    font-size: 1em
-  .contact-top-one h6
-    font-size: .9em
-    line-height: 1.8em
-    margin: .2em 0
-  .footer-right
-    width: 86%
-    margin-top: 0
-  .footer-img
-    margin-right: 0
-    width: 100%
-  .footer-news h4
-    padding-bottom: 13px
-  .footer-right h5
-    margin: 6px 0
-    padding-bottom: 9px
-  .footer-news-info
-    margin: 2px auto 0
-  .col-md-4.flickr-photo
-    margin: 25px auto 0
-  .flickr-photo img
-    margin-top: .9em
-  .contact-top-one p
-    margin: 2px 0
-  .sub-button
-    margin-top: 10px
-  .contact-bottom
-    margin: 1em 0 1em
   span
     &.icon-1
       width: 53px
@@ -2041,41 +1038,33 @@ $navIconImg: 'nav-icon.png'
   .copyrights p
     line-height: 1.7em
     margin: 16px 0
-  .social-icons
-    margin: 8% auto
   .col-md-3.team-grid-left
     width: 100%
-  .team-grid-left
-    h4
-      font-size: 1.5em
-    p
-      font-size: 1em
-      padding: 0 0 14px
   .contact-top-one
     h4
       font-size: 1.2em
     padding: 5px 0 16px
-  .service-section-grids
+  .recommendation-section-grids
     padding: 3em 0 3em
     h3
       font-size: 1.8em
     p
       font-size: 1.2em
-  .service-section-grid h4
+  .recommendation-section-grid h4
     font-size: 1.1em
-  .service-section-grids p
+  .recommendation-section-grids p
     font-size: 0.875em
   .icon
     padding: 0
     margin-right: 12%
   .col-md-6.service-grid
     padding: 0
-  .service-section-grid
+  .recommendation-section-grid
     margin-top: 1em
   .icon
     width: 16%
     margin-right: 6%
-  .service-section-grid
+  .recommendation-section-grid
     p
       height: 83px
       overflow: hidden
