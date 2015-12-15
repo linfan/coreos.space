@@ -1,11 +1,13 @@
 FROM node:4.2.1
 
 ADD . /usr/app
-ENV NODE_ENV production
-
 WORKDIR /usr/app
+
+ENV NODE_ENV development
 RUN npm install
 RUN apt-get install -y make
+
+ENV NODE_ENV production
 RUN make build-rel
 
 EXPOSE 3000
