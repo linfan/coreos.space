@@ -7,13 +7,20 @@ html
         .banner-mini
             .container
                 include inc/navigator
-        .error-page
-            .container
-                .error-page.text-center
-                    h3
-                        | 建
-                        span 设
-                        | 中
-                    p 这个页面还在建设中,敬请期待
-                    a.button.curl-bottom-right.two(href='/') 本书首页
+        .container
+            .about-grids
+                h3 关于作者
+                .clearfix
+                div(style="height: 5em;")
+                .clearfix
+                .col-md-3
+                    img(src="about-author.png" style="width: 100%; height: auto;")
+                .col-md-9.about-grid
+                    h4 林帆
+                    p
+                        | ThoughtWorks公司软件工程师及DevOps咨询师，具有丰富的持续交付和服务器运维自动化实践经验，专注于DevOps和容器技术领域。
+                        | 主要作品包括CSDN的《CoreOS实践指南》系列、InfoQ的《CoreOS那些事》系列和《程序员》杂志容器技术栏目的数篇文章。
+                    b [图为作者(右)与CoreOS产品负责人兼首席布道师Kelsey Hightower(左)在CNUT容器技术大会时的合影]
+                .clearfix
+                div(style="height: 5em;")
         include inc/footer
