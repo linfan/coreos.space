@@ -23,6 +23,7 @@ app.use(koa_static('js/dist/client'));
 app.use(koa_static('style/3rd'));
 app.use(koa_static('style/css'));
 app.use(koa_static('img'));
+app.use(koa_static('views/static'));
 
 // Logging middleware
 app.use(function *(next) {
