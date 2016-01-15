@@ -7,13 +7,32 @@ html
         .banner-mini
             .container
                 include inc/navigator
-        .error-page
-            .container
-                .error-page.text-center
-                    h3
-                        | 建
-                        span 设
-                        | 中
-                    p 这个页面还在建设中,敬请期待
-                    a.button.curl-bottom-right.two(href='/') 本书首页
+        .container
+            .about-grids
+                h3 CoreOS演示文稿
+                .clearfix
+                div(style="height: 2em;")
+                .clearfix
+                .col-md-3
+                    img(src="keynote1.png" style="width: 100%; height: auto;")
+                .col-md-9.about-grid
+                    a(href='http://pan.baidu.com/s/1byhfgM')
+                        h4 不完美的CoreOS
+                        h5 [第一次国内CoreOS社区MeetUp]
+                        br
+                        p 在《CoreOS实践之路》的推荐和序中多次提到了在北京的第一次国内CoreOS社区MeetUp活动，在这次活动中作者分享的话题主要涵盖了在CoreOS诞生不久后，已经展现出的突出优势，以及在当时还存在的一些问题。这篇文稿中提到的那些『不完美』之处很多已不复存在了，但其中的内容仍然具有一定参考价值。
+                .clearfix
+                div(style="height: 3em;")
+                .clearfix
+                .col-md-3
+                    img(src="keynote2.png" style="width: 100%; height: auto;")
+                .col-md-9.about-grid
+                    a(href='http://pan.baidu.com/s/1eRtpkzS')
+                        h4 CoreOS from Zero to One
+                        h5 [CNUT容器技术大会]
+                        br
+                        p CNUT容器技术大会(http://cnutcon.com/)是由极客邦及旗下的InfoQ品牌主办的全球性容器技术大会，作者在第一届CNUT大会上分享的话题从CoreOS系统的发展历程、适用场景和内置标准服务等方面对CoreOS系统进行了介绍。文稿中包含了一些具有参考意义的数据和诙谐的漫画，对于CoreOS新手来说是不错的入门资料。
+                .clearfix
+                div(style="height: 3em;")
+                .clearfix
         include inc/footer
