@@ -46,25 +46,25 @@ html
                         COS 是一个容器化操作系统，内置Docker 向应用程序提供容器化环境。除了Docker对容器的常规管理功能之外，还可以为Docker创建的容器指定IP地址，从而实现跨主机和其他COS上的容器进行网络通讯。
                         | 除此之外，由于内置了基于域名的服务发现功能，容器之间还可以直接通过为容器创建的名字进行网络通讯。
                         br
-                        img.cosImg(src='/cos1.png', style="max-width: 100%;")
+                        img.newImg(src='/cos1.png')
                         br
-                        img.cosImg(src='/cos2.png', style="max-width: 100%;")
+                        img.newImg(src='/cos2.png')
                         br
                         b 4.2 自动升级
                         br
                         COS 在每次升级时都会将整个系统（包括内核和内置的应用程序）升级更新到一个最新的状态。COS会不定期与更新服务器进行交互，查找更新并自动下载可用的更新，这个过程中，被更新的机器不需要从负载集群中移除。
                         | 同时在这个过程中，为了保证不影响其上运行的应用程序，COS还会通过cgroups限制更新过程中的硬盘和网络I/O。
                         br
-                        img.cosImg(src='/cos3.png', style="max-width: 100%;")
+                        img.newImg(src='/cos3.png')
                         br
                         b 4.3 集群支持
                         br
                         | COS 在安装后就自动加入到集群中，内置的etcd通过raft 共识算法把分散在数据中心的各个COS操作系统连接起来，成为一个集群整体。
                         | 集群中的每个COS系统都可以通过etcd共享和发布配置或状态信息，无论从集群中的那个节点，所获取的信息都是一致的。
                         br
-                        img.cosImg(src='/cos4.png', style="max-width: 100%;")
+                        img.newImg(src='/cos4.png')
                         br
-                        img.cosImg(src='/cos5.png', style="max-width: 100%;")
+                        img.newImg(src='/cos5.png')
                     h4 5、产品特性
                     p
                         b 5.1 极致精简
@@ -72,7 +72,7 @@ html
                         | COS专门为运行容器而设计，非常小巧而精简，整个系统只有400M左右大小，除了除了一些标准的默认程序之外，COS没有任何多余的软件。
                         | 高度定制专一化的COS有更少的安全漏洞，更快的启动速度，从而也使得快速高频的系统更新成为可能。
                         br
-                        img.cosImg(src='/cos6.png', style="max-width: 100%;")
+                        img.newImg(src='/cos6.png')
                         br
                         b 5.2 无缝升级
                         br

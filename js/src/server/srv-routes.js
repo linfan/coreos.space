@@ -54,6 +54,12 @@ class Routes {
       this.status = 200;
     }));
 
+    app.use(route.get('/news/rkt-1-0', function*() {
+      // Rkt 1.0版本发布的报道
+      this.body = yield this.render(htmlPath + '/news/rkt-1-0');
+      this.status = 200;
+    }));
+
     app.use(function *(next) {
       yield next;
       // 这个是默认路由

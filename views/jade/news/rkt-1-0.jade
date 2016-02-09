@@ -1,0 +1,213 @@
+doctype html
+html
+    head
+        include ../inc/header
+        script(type='text/javascript', src='download.js')
+    body
+        .banner-mini
+            .container
+                include ../inc/navigator
+        .container
+            .about-grids
+                h3 CoreOS发布Rkt 1.0
+                .about-grid
+                    p
+                    | 北京时间2月5日，Rkt 1.0正式发布。Rkt诞生于2014年12月，是与Docker类似的另一款容器引擎，CoreOS强调Rkt更专注于解决安全、兼容、执行效率等方面的问题。经过近15个月的努力，Rkt已经积累了超过100位的代码贡献者，也逐步建立了自己的生态系统。
+                    p
+                    | 1.0的发布也就意味着Rkt已经可以在生产环境中使用。新的版本中引入了一些新的安全特性，以及一些针对命令行接口和磁盘格式（on-disk format ）的优化。
+                    p
+                    | Rkt目前支持CoreOS的应用容器镜像格式和Docker的镜像格式，所以你可以使用Docker构建容器，然后在Rkt中运行。这里有Rkt 1.0的
+                    a(href='https://coreos.com/blog/getting-started-with-rkt-1.0.html') 快速入门教程
+                    | 。
+                    p
+                    | DockOne社区第一时间全文翻译了官方新闻，内容如下：
+                    p
+                    | 今天，对
+                    a(href='https://coreos.com/rkt/') CoreOS的rkt
+                    | 而言，是个大日子，好日子——Rkt 1.0正式发布。
+                    p
+                    | Rkt是一个安全、高执行效率以及强兼容能力的容器引擎。作为以安全与兼容性为核心诉求的容器引擎，rkt诞生于2014年，当时各类云原生计算方案与容器机制才刚刚开始崛起。自那时开始，市场对于这种安全性高并且可用于生产环境的容器运行时的需求变得日益强烈。
+                    p
+                    img.newImg(src='http://dockerone.com/uploads/article/20160205/4c9590d695d82de54ef7a1380de0965f.png', title='rkt-1.0-banner_.png', alt='rkt-1.0-banner_.png')
+                    p
+                    | 我们一直在努力让rkt能够更好且更灵活地同真实世界中的架构相契合，同时保障最佳安全实践，而社区方面提供的贡献与支持亦开始不断增长。经过15个月的持续开发，rkt已经接收到超过3000项commits，贡献者总数量超过100位。
+                    br
+                    h4 rkt发展道路上的一大里程碑
+                    p
+                    | 在rkt 1.0版本当中，我们引入了：
+                    p
+                    ul
+                        li
+                            strong 稳定的接口（interface）与磁盘（on-disk）格式：
+                            br
+                            | 命令行UX与磁盘格式现在开始已经非常稳定，而且可供用户根据需要加以开发。针对这些界面的任何变更都具备向下兼容能力，且与现有弃用情况保持一致。
+                            p
+                        li
+                            strong 高级安全功能：
+                            br
+                            | 凭借着KVM容器隔离、SELinux支持、TPM集成、镜像签名验证以及权限拆分等功能，rkt已经成为高安全要求使用场景下的重要容器引擎选项。
+                            p
+                        li
+                            strong 运行现有Docker镜像以及标准化应用容器镜像：
+                            br
+                            | 尽管rkt针对标准做出承诺，但其仍然能够与Docker镜像格式顺利兼容。这意味着大家可以构建Docker镜像并将其运行在rkt当中。除此之外，CoreOS还将在未来以App Container Image格式为基础支持持续发展的工具生态系统。
+                            p
+                        li
+                            strong 强大的技术社区：
+                            br
+                            | rkt的生态系统正不断发展，并逐步成为开发人员与运维人员的工作根据地——他们在这里不断提供安全的、可组合且基于标准的容器引擎方案。目前rkt已经能够运行在Arch、CoreOS、Ubuntu、Fedora、MinxOS以及其它多种Linux平台之上，而且采用rkt的项目与产品也在快速增加。
+                            p
+
+                    h4 为什么选择rkt？发展历程概述
+                    p
+                    | 在庆祝这一重要里程碑的同时，我们也有必要回顾rkt项目的发展历程，了解CoreOS方面当初为什么决定对其进行持续投入。正如我们在立项之初所言，rkt的构建工作是为了打造出一套能够真正实现安全性、组合性与标准遵循效果的容器引擎。
+                    p
+                    ul
+                        li
+                            strong 安全性：
+                            br
+                            | rkt当中包含有权限拆分功能，旨在避免不必要的操作以root权限运行，同时提供默认的签名验证与其它出于安全性考量的先进功能。
+                            p
+                        li
+                            strong 可组合性：
+                            br
+                            | rkt不需要配合长期运行的后台守护程序，且能够与systemd或者upstart等现有init系统顺畅协作。
+                            p
+                        li
+                            strong 基于标准：
+                            br
+                            | 只要多款工具共享同一套经过精心制定的标准，从而引导用户构建并打包容器镜像，我们才能将其称为“标准容器”。rkt的设计初衷恰好在于支持并提供面向各类容器标准的向下兼容能力。
+                            p
+
+                    h4 着眼于安全之相关功能
+                    p
+                    | rkt在构建之初就始终着眼于以安全性为主要考量之运行环境。其中大多数原则并非源自CoreOS——相反，我们当时是考虑到了容器行业在很大程度上忽视了各类安全最佳实践的客观现状。
+                    p
+                    ul
+                        li
+                            strong 面向最佳实践之架构设计
+                            br
+                            | Rkt力求体现Unix“工具”这一理念，并充分从过去几十年积累到的架构与安全性最佳实践中汲取营养。其中包括默认提供镜像签名验证机制、在不同任务之间进行权限隔离，例如rkt不允许以root权限执行容器发现与检索，从而解决容器执行默认要求root权限的难题。另外，rkt采用的无守护程序模式意味着其能够轻松与标准init系统相集成，例如systemd与upstart，或者其它集群编排系统，例如Nomad与Kubernetes。
+                            p
+                        li
+                            strong 可插拔隔离机制，包括基于KVM之“Clear Container”
+                            br
+                            | 模块化隔离意味着rkt支持一系列运行容器所必需的技术方案。尽管软件隔离已经成为Linux cgroup容器的默认处理方式，但以英特尔的KVM“Clear Container”或者主机级rkt为代表的各类先进解决方案都能够提供可选容器限定级别。
+                            p
+                        li
+                            strong 英特尔Clear Container
+                            br
+                            | 随着英特尔推出立足于Clear Container的stage1，rkt已经能够利用CPU强制隔离机制执行标准ACI。这就成功在两类核心诉求之间取得了平衡：应用程序本身专注于打包与部署效率，而硬件则要求保证虚拟机隔离。
+                            p
+                        li
+                            strong rkt fly
+                            br
+                            | 在fly stage1隔离环境，rkt会执行一套标准化容器镜像，并保证其拥有对主机环境的全面接入能力。这意味着大家可以运行具备特定权限要求的软件，例如需要进行主机全面访问的系统管理工具，但同时又保证镜像签名与部署策略继续生效。将rkt与fly相结合能够在底层系统程序中充分保留应用程序容器的打包能力与分布式优势。
+                            p
+                        li
+                            strong自动化SELinux
+                            br
+                            | 在SELinux内核当中，rkt能够以自动化方式将合适的SELinux标签配置至各个执行pod当中，从而保证各容器与主机进程不致相互干扰。这意味着即使容器本身遭遇入侵，对方仍然无法借此访问其它容器或者主机。
+                            p
+                        li
+                            strong TPM集成
+                            | rkt将现代服务器系统上所特有的受信平台模块（简称TPM）引入进入，旨在对pod运行状态进行防篡改验证记录，而这一举措在容器安全性保障领域无疑是一项重要创新。TPM集成已经成为一类新型基础设施的关键性组成部分——我们将其称为“分布式受信计算”。
+                            p
+
+                    h4 appc以及OCI
+                    p
+                    | rkt社区积极支持开放标准。Rkt最初作为App Container（简称appc）项目中的一项实现方案开发而成。2015年年中，另一相关实体由此诞生——这就是旨在围绕应用程序容器构建更多标准规范的开放容器倡议（简称OCI）。从表面上看，appc项目与OCI的最终诉求似乎基本相同。但具体二言，二者之间虽然存在一定交集，但仍有相当可观的协作空间。
+                    p
+                    img.newImg(src='http://dockerone.com/uploads/article/20160205/b007dca7707d9e65e2ededfee5f8100f.jpg', title='oci.jpg', alt='oci.jpg')
+                    center 2016年OCI与appc发展状况展望
+                    p
+                    | 在我们看来，容器标准的一大核心要点在于提供一套可供开发人员打包且能够简化发布流程的镜像格式。着眼于appc项目，该格式为App Container Image（简称ACI），而Docker则专门使用自家独特的Docker镜像格式。尽管共享式标准非常重要，但经过六个月的努力，开放容器倡议（简称OCI）仍未最终决定其是否要开发一套标准化镜像格式。目前，OCI社区的主要工作在于针对容器运行时环境构建标准，而非着眼于容器镜像。容器运行时之功能规范同样是一项值得探讨的议题，不过我们认为当下还有更为迫切的需求——一套标准化容器镜像规范，这将成为更为开放且更具发展空间的容器行业的立足基础。总而言之，OCI与appc之间息息相关但却并不相互排斥。具体来讲，仍有充足的空间让二者在现在与未来保持相互合作及彼此推进。
+                    p
+                    | 总结来讲，我们的目标是确保开发人员能够构建并使用标准化格式的应用容器镜像，同时选择多种工具并将其部署在各类运行时当中。有鉴于此，我们仍在同appc社区以协作方式不断推动App Container规范及相关镜像格式。我们在兼容性方面做出的选择意味着rkt能够支持以ACI或者Docker典型镜像格式打包的应用程序。
+                    br
+                    h4 生产型容器需要强大的生态系统作为支撑
+                    p
+                    | 我们已经通过与社区的紧密合作推出了rkt 1.0版本，而今天我们除了要感谢那些将rkt打造成安全性最出色的容器运行时方案的参与者们，同时也要着眼于新兴生态系统的培育。归功于同英特尔间的协作、利用Sysdig对生产环境下的rkt加以监控、利用Calico项目实现rkt网络功能集成以及Quay带来的rkt容器存储等等，如今我们终于能够将rkt作为虚拟机进行启动。这些切实得到验证的成果展示了rkt与appc相关社区的快速发展，同时亦再次强调了开放标准在推动合作伙伴构建创新成果方面发挥的重要作用。
+                    p
+                    | 下面来看rkt与生态系统之间的项目合作与相关故事：
+                    ul
+                        li
+                            strong Apcera
+                            br
+                            | Apcera创造出了Kurma——另一套基于App Container规范的容器运行时。
+                            br
+                            | “我们对rkt的1.0版本十分赞赏，因为它已经成为容器运行时标准领域的一大里程碑。Rkt是第一款立足于App Container（即appc）规范的1.0版本实现方案，且已经做好进入生产环境的准备，”Apcera公司首席架构师Ken Robertson表示。“Apcera坚信appc与容器标准的价值将通过我们对自身Kurma项目的不断投入得到进一步凸显。”
+                            p
+                        li
+                            strong BlaBlaCar
+                            br
+                            | BlaBlaCar公司，一家成立于2006年的高声誉拼车服务供应商，其早在rkt发展早期即参与其中并将其全部业务转移到容器领域。
+                            br
+                            | “自rkt开发工作开始进行以来，我们就一直惊讶于rkt的出色稳定性与灵活度水平——即使当时其仅处于早期版本阶段，”BlaBlaCar公司系统工程师Simon Lallemand表示。“我们正在将自身全部服务迁移到rkt与CoreOS当中。截至目前，我们90%的产品都已经运行在该平台之上。”
+                            p
+                        li
+                            strong Deis（Engine Yard）
+                            br
+                            | “rkt容器运行时满足了市场的迫切需要，”Deis公司CTO Gabriel Monroy指出。“随着我们开始帮助客户将容器引入生产环境，我们愈发意识到容器运行时能够出色地完成其既定任务。CoreOS技术团队已经证明了他们有能力提供一套拥有极佳稳定性与安全性保障的分布式系统——rkt当然也不例外。”
+                            p
+                        li
+                            strong Giant Swarm
+                            br
+                            | “我们可以说是rkt的忠实拥护者，而且对于rkt 1.0版本的发布感到振奋不已，”Giant Swarm公司初始人兼CTO Timo Derstappen指出。“CoreOS在安全领域拥有领先地位，这不仅体现在rkt身上，同时也包括CoreOS产品套件。随着整个行业开始构建下一代基础设施并转向微服务架构，rkt成为正确发展方向上的又一重要里程碑。”
+                            p
+                        li
+                            strong HashiCorp
+                            br
+                            | HashiCorp公司已经在Nomad当中添加了对rkt的支持能力。
+                            br
+                            | “我很高兴地看到rkt如今已经走向1.0版本，”HashiCorp公司创始人Mitchell Hasimoto指出。“我们在Nomad以及其它驱动程序当中支持rkt，这样各企业客户就能够轻松实现rkt容器部署工作。Nomad还显著简化了从一套到数千套rkt容器的规模各异的部署任务流程。”
+                            p
+                        li
+                            strong 华为
+                            br
+                            | 华为公司通过多种方式为rkt提供贡献，其中主要包括容器registry与提供ARM支持能力两大方面。
+                            br
+                            | “祝贺CoreOS推出了这套容器运行时正式版本，即rkt v1.0。这是容器技术世界迎来的又一座里程碑，”华为公司PaaS首席架构师熊英（Ying Xiong）博士指出。“在与其它技术加以结合之后，rkt已经成为我们整体容器技术堆栈中的组成部分，并为我们的客户及合作伙伴提供重要帮助。”
+                            p
+                        li
+                            strong 英特尔
+                            br
+                            | “以rkt为代表的容器型环境能够为数据中心工作负载提供令人惊叹的可移植能力。我们与CoreOS协作以对rkt做出优化，旨在尽可能发挥英特尔平台技术的全部优势，从而面向更为广泛的市场部署需求提供经过改进的工作负载隔离、基于硬件的安全功能以及效率提升成效。我们着眼于同CoreOS以协作方式将基于rkt的解决方案推向市场，”英特尔公司首席工程师兼软件定义基础设施架构师Das Kamhout表示。
+                            p
+                        li
+                            strong Kubernetes
+                            br
+                            | “rkt体现了Kubernetes作为核心特色的开放性与可选择性原则，我们也很高兴地看到其迎来了1.0版本这一发展里程碑，”Kubernetes核心贡献者Dawn Chen表示。“我们乐于同CoreOS以及rkt社区进行协作，从而确保Kubernetes能够被确切整合于其中，最终帮助用户根据需要选择最适合自己的镜像格式。”
+                            p
+                        li
+                            strong Calico项目（Metaswitch Networks）
+                            br
+                            | 今天Calico项目开发方公布了其面向rkt 1.0版本的容器网络接口（简称CNI）网络插件：
+                            br
+                            | “我们从起步阶段就一直在支持App Container规范以及相关CNI规范，旨在确保各类容器用户能够轻松将其接入自己的容器，并利用需要的网络功能实现业务成功，”Metaswitch Networks公司Calico项目总经理兼布道者Andy Randall表示。“Calico项目荣幸地构建起了自己的开发社区，从而实现基于容器之应用程序的安全部署——而这一切都要归功于rkt的强大安全性同Calico项目细粒化策略执行机制的协作配合。”
+                            p
+                        li
+                            strong Sysdig
+                            br
+                            | 今天，Sysdig刚刚立足于Sysdig Cloud与Sysdig开源项目发布了面向rkt容器的实时监控与故障排查方案。作为惟一一套容器原生型监控解决方案，Sysdig的新功能允许用户以可视化方式掌握物理基础设施、容器甚至是运行于rkt内之应用程序的性能表现。
+                            br
+                            img.newImg(src='http://dockerone.com/uploads/article/20160205/949bb332951f388799f747ee4466868c.png', title='Sysdig_rkt_topology.png', alt='Sysdig_rkt_topology.png')
+                            center Sysdig对rkt容器进行监控
+                            br
+                            |  “rkt 1.0标志着容器技术社区已经取得了伟大的成就，同时亦将帮助我们将安全性机制内置于应用程序的开发与部署流程当中，”Sysdig公司CEO Loris Degioanni表示。“为了帮助rkt社区将其方案部署至生产环境当中，Sysdig公司目前已经立足于Sysdig Cloud与Sysdig开源项目提供rkt监控、警报与故障排查方案。”
+                            p
+                        li
+                            strong systemd
+                            br
+                            |  “我认为在rkt模式当中，”system首席开发者Lennart Poettering表示，“容器与服务管理机制并结合于一处，这种将容器与主机服务以1：1形式加以映射的方式是个极好的主意。容器与服务的资源管理、自我排查、生命周期管理——这一切都紧密集成在操作系统当中; 而这正是容器管理工具的设计初衷。”
+                            p
+                    p
+                    strong
+                        | 原文链接：
+                        a(href='https://coreos.com/blog/rkt-hits-1.0.html') The Security-minded Container Engine by CoreOS: rkt Hits 1.0
+
+                    p
+                        | 本文转载自
+                        a(href='http://dockone.io/article/1010') DockOne
+                        | 社区。
+        include ../inc/footer
