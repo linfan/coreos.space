@@ -16,43 +16,52 @@ html
                         th 页码
                         th 原内容
                         th 修正内容
+                        th 发现者
                     tr
                         td #1
                         td 171
                         td 启动完成后再次运行“etcdctl member add”
                         td 启动完成后再次运行“etcdctl member list”
+                        td 作者
                     tr
                         td #2
                         td 172
                         td core-03=http://10.0.2.187:2380
                         td core-03=http://10.0.2.17:2380
+                        td 作者
                     tr
                         td #3
                         td 172
                         td Cloudinit例子的代码中使用了"172.17.8.x"的地址,与前一个中的地址不符
                         td 应该改为与前一例子相应的"10.0.2.x"地址
+                        td 作者
                     tr
                         td #4
                         td 202
                         td 因为其作用在TCP/IP协议栈的第七层
                         td 因为其作用在OSI参考模型协议栈的第七层
-                    //tr
-                    //    td #5
-                    //    td
-                    //    td
-                    //    td
-                    //tr
-                    //    td #6
-                    //    td
-                    //    td
-                    //    td
-                    //tr
-                    //    td #7
-                    //    td
-                    //    td
-                    //    td
+                        td 笑而不语
+                    tr
+                        td #5
+                        td 46
+                        td $ echo "CoreOS Volume" &gt; /data:/var/lib/docker/vfs/dir/082eb…aeb5d/topic
+                        td $ echo "CoreOS Volume" &gt; /var/lib/docker/vfs/dir/082eb…aeb5d/topic
+                        td Yanpan Chen
+                    tr
+                        td #6
+                        td 172
+                        td 此时若再次用“etcdctl member remove”命令查看集群的成员
+                        td 此时若再次用“etcdctl member list”命令查看集群的成员
+                        td 周元龙
+                    tr
+                        td #7
+                        td 174
+                        td tar -cxf backup.etcd.tar.gz /tmp/etcd_backup
+                        td tar -czf backup.etcd.tar.gz /tmp/etcd_backup
+                        td 周元龙
                     //tr
                     //    td #8
+                    //    td
                     //    td
                     //    td
                     //    td
@@ -61,8 +70,10 @@ html
                     //    td
                     //    td
                     //    td
+                    //    td
                     //tr
                     //    td #10
+                    //    td
                     //    td
                     //    td
                     //    td
@@ -71,8 +82,10 @@ html
                     //    td
                     //    td
                     //    td
+                    //    td
                     //tr
                     //    td #12
+                    //    td
                     //    td
                     //    td
                     //    td
@@ -81,8 +94,10 @@ html
                     //    td
                     //    td
                     //    td
+                    //    td
                     //tr
                     //    td #14
+                    //    td
                     //    td
                     //    td
                     //    td
@@ -91,8 +106,10 @@ html
                     //    td
                     //    td
                     //    td
+                    //    td
                     //tr
                     //    td #16
+                    //    td
                     //    td
                     //    td
                     //    td
@@ -101,8 +118,10 @@ html
                     //    td
                     //    td
                     //    td
+                    //    td
                     //tr
                     //    td #18
+                    //    td
                     //    td
                     //    td
                     //    td
@@ -111,8 +130,10 @@ html
                     //    td
                     //    td
                     //    td
+                    //    td
                     //tr
                     //    td #20
+                    //    td
                     //    td
                     //    td
                     //    td
@@ -121,8 +142,10 @@ html
                     //    td
                     //    td
                     //    td
+                    //    td
                     //tr
                     //    td #22
+                    //    td
                     //    td
                     //    td
                     //    td
@@ -131,8 +154,10 @@ html
                     //    td
                     //    td
                     //    td
+                    //    td
                     //tr
                     //    td #24
+                    //    td
                     //    td
                     //    td
                     //    td
@@ -141,8 +166,10 @@ html
                     //    td
                     //    td
                     //    td
+                    //    td
                     //tr
                     //    td #26
+                    //    td
                     //    td
                     //    td
                     //    td
