@@ -42,3 +42,9 @@ watch: unwatch babel-watch sass-watch jade-watch
 
 run:
 	node js/dist/server/server.js
+
+docker-build:
+	docker build -t coreos-space:$(date +%Y-%m-%d) .
+
+docker-run:
+	docker run -d --restart=always --name dont-delete-me -p 80:3000 coreos-space:$(date +%Y-%m-%d)
