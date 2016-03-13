@@ -43,6 +43,9 @@ watch: unwatch babel-watch sass-watch jade-watch
 run:
 	node js/dist/server/server.js
 
+base-docker-build:
+	docker build -t coreos-space-base -f BaseDockerfile .
+
 docker-build:
 	docker build -t coreos-space:$(date +%Y-%m-%d) .
 

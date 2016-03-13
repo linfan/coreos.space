@@ -1,11 +1,6 @@
-FROM node:4.2.1
+FROM coreos-space-base:latest
 
 ADD . /usr/app
-WORKDIR /usr/app
-
-ENV NODE_ENV development
-RUN npm install
-RUN apt-get install -y make
 
 ENV NODE_ENV production
 RUN make build-rel
