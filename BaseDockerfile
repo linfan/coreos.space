@@ -1,7 +1,7 @@
 FROM node:4.2.1
 
-ADD package.json /usr/app
 WORKDIR /usr/app
+ADD package.json /usr/app/package.json
 
 ENV NODE_ENV development
 RUN npm install
