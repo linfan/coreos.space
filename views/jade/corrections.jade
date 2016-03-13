@@ -95,68 +95,80 @@ html
                         td ystemd-run
                         td systemd-run
                         td Yanpan Chen
-                    //tr
-                    //    td #12
-                    //    td
-                    //    td
-                    //    td
-                    //    td
-                    //tr
-                    //    td #13
-                    //    td
-                    //    td
-                    //    td
-                    //    td
-                    //tr
-                    //    td #14
-                    //    td
-                    //    td
-                    //    td
-                    //    td
-                    //tr
-                    //    td #15
-                    //    td
-                    //    td
-                    //    td
-                    //    td
-                    //tr
-                    //    td #16
-                    //    td
-                    //    td
-                    //    td
-                    //    td
-                    //tr
-                    //    td #17
-                    //    td
-                    //    td
-                    //    td
-                    //    td
-                    //tr
-                    //    td #18
-                    //    td
-                    //    td
-                    //    td
-                    //    td
-                    //tr
-                    //    td #19
-                    //    td
-                    //    td
-                    //    td
-                    //    td
-                    //tr
-                    //    td #20
-                    //    td
-                    //    td
-                    //    td
-                    //    td
-                    //tr
-                    //    td #21
-                    //    td
-                    //    td
-                    //    td
-                    //    td
+                    tr
+                        td #12
+                        td P151
+                        td 5, 7
+                        td hello2.service
+                        td hello.service
+                        td Yanpan Chen
+                    tr
+                        td #13
+                        td P151
+                        td 倒数第3行
+                        td fleetctl fournal
+                        td fleetctl journal
+                        td Yanpan Chen
+                    tr
+                        td #14
+                        td P156
+                        td 图5-3
+                        td 最左边的角色为Leader有误
+                        td 此角色应该改为Proxy
+                        td Yanpan Chen
+                    tr
+                        td #15
+                        td P176
+                        td 29
+                        td 这里API 路径最后的那个反斜杠表示访问Etcd 的根目录，不能省略
+                        td 在较新版本的Etcd中，路径/v2/keys/最后的斜杠(/)已经不是必须的
+                        td Yanpan Chen
+                    tr
+                        td #16
+                        td P180
+                        td 22, 26
+                        td curl http://127.0.0.1:2379/v2/keys/demodir -XPUT -d value=bar -d ttl=30 -d
+                    evExist=true
+                        td 去掉-d value=bar
+                        td Yanpan Chen
+                    tr
+                        td #17
+                        td 183
+                        td 29
+                        td 由于“etcdctl get”命令并不能返回数据节点的modifiedIndex值
+                        td etcdctl -o extended get 可以返回键的modifiedIndex值
+                        td Yanpan Chen
+                    tr
+                        td #18
+                        td 190
+                        td 19
+                        td /App/_message
+                        td /App/_data
+                        td Yanpan Chen
+                    tr
+                        td #19
+                        td 197
+                        td 倒数第3行
+                        td ConditionMachineOf=apache@%i.service
+                        td MachineOf=apache@%i.service
+                        td Yanpan Chen
+                    tr
+                        td #20
+                        td P197
+                        td 倒数第2行
+                        td apache-secretary@%i.service
+                        td apache-secretary@.service
+                        td Yanpan Chen
+                    tr
+                        td #21
+                        td P199
+                        td 4
+                        td apache-secretary@%i.service
+                        td apache-secretary@.service
+                        td Yanpan Chen
                     //tr
                     //    td #22
+                    //    td
                     //    td
                     //    td
                     //    td
@@ -167,8 +179,10 @@ html
                     //    td
                     //    td
                     //    td
+                    //    td
                     //tr
                     //    td #24
+                    //    td
                     //    td
                     //    td
                     //    td
@@ -179,8 +193,10 @@ html
                     //    td
                     //    td
                     //    td
+                    //    td
                     //tr
                     //    td #26
+                    //    td
                     //    td
                     //    td
                     //    td
