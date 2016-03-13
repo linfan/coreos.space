@@ -47,7 +47,7 @@ base-docker-build:
 	docker build -t coreos-space-base -f BaseDockerfile .
 
 docker-build:
-	docker build -t coreos-space:$(date +%Y-%m-%d) .
+	docker build -t coreos-space .
 
 docker-run:
-	docker run -d --restart=always --name dont-delete-me -p 80:3000 coreos-space:$(date +%Y-%m-%d)
+	docker run -d --restart=always --name dont-delete-me -p 80:3000 coreos-space
