@@ -1,8 +1,0 @@
-FROM node:4.2.1
-
-ADD package.json /usr/app/
-WORKDIR /usr/app
-
-ENV NODE_ENV development
-RUN npm install
-RUN apt-get install -y make
