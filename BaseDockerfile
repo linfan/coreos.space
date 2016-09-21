@@ -1,4 +1,4 @@
-FROM node:4.2.1
+FROM node:6.6.0
 
 WORKDIR /usr/app
 ADD package.json /usr/app/package.json
